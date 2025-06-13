@@ -1,0 +1,47 @@
+{
+  "name": "odds",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "build:production": "cross-env NODE_ENV=production next build",
+    "build:analyze": "cross-env ANALYZE=true next build -c next.config.analyze.mjs",
+    "start": "next start",
+    "start:production": "cross-env NODE_ENV=production next start",
+    "lint": "next lint",
+    "optimize": "node scripts/optimize.js",
+    "install-optimizers": "node scripts/install-optimizers.js",
+    "analyze-bundle": "node scripts/analyze-bundle.js",
+    "clean": "rm -rf .next && rm -rf out",
+    "export": "next build && next export",
+    "analyze": "cross-env ANALYZE=true next build"
+  },
+  "dependencies": {
+    "@next/bundle-analyzer": "^15.3.3",
+    "@radix-ui/react-accordion": "^1.2.11",
+    "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@react-three/drei": "^10.0.8",
+    "@react-three/fiber": "^9.1.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "critters": "^0.0.25",
+    "cross-env": "^7.0.3",
+    "framer-motion": "^12.12.1",
+    "lucide-react": "^0.456.0",
+    "next": "15.3.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-type-animation": "^3.2.0",
+    "sharp": "^0.34.2",
+    "tailwind-merge": "^2.6.0",
+    "three": "^0.176.0"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4",
+    "tailwindcss-animate": "^1.0.7"
+  }
+}

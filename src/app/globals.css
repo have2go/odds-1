@@ -1,0 +1,169 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  /* Переопределяем все брейкпоинты */
+  --breakpoint-*: initial;
+  --breakpoint-xs: 20rem;    /* 320px */
+  --breakpoint-sm: 24.5rem;  /* 392px */
+  --breakpoint-md: 48rem;    /* 768px */
+  --breakpoint-lg: 64rem;    /* 1024px */
+  --breakpoint-xl: 80rem;    /* 1280px */
+  --breakpoint-2xl: 120rem;  /* 1920px */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sf-pro);
+  overflow-x: hidden;
+}
+
+/* Scroll-based Animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Animation Classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Градиентный текст с правильным отображением */
+.gradient-text {
+  background: linear-gradient(180.25deg, #FFFFFF 19.68%, #000102 155.74%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  /* Исправляем обрезание символов с хвостиками */
+  line-height: 1.1;
+  padding-bottom: 0.05em;
+  overflow: visible;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Custom horizontal scrollbar for Cultural Reflections */
+.custom-horizontal-scrollbar::-webkit-scrollbar {
+  height: 4px;
+}
+
+.custom-horizontal-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+}
+
+.custom-horizontal-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.custom-horizontal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Global cursor pointer for interactive elements */
+button, 
+a, 
+[role="button"], 
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+/* Accordion animations */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.accordion-up {
+  animation: accordion-up 0.2s ease-out;
+}
+
+/* shadcn/ui CSS переменные (для компонентов) */
+@layer base {
+  :root {
+    --sh-background: 0 0% 0%;
+    --sh-foreground: 0 0% 100%;
+    --sh-card: 0 0% 3.9%;
+    --sh-card-foreground: 0 0% 98%;
+    --sh-popover: 0 0% 3.9%;
+    --sh-popover-foreground: 0 0% 98%;
+    --sh-primary: 0 0% 98%;
+    --sh-primary-foreground: 0 0% 9%;
+    --sh-secondary: 0 0% 14.9%;
+    --sh-secondary-foreground: 0 0% 98%;
+    --sh-muted: 0 0% 14.9%;
+    --sh-muted-foreground: 0 0% 63.9%;
+    --sh-accent: 0 0% 14.9%;
+    --sh-accent-foreground: 0 0% 98%;
+    --sh-destructive: 0 84.2% 60.2%;
+    --sh-destructive-foreground: 0 0% 98%;
+    --sh-border: 0 0% 14.9%;
+    --sh-input: 0 0% 14.9%;
+    --sh-ring: 0 0% 83.1%;
+    --sh-radius: 0.75rem;
+  }
+}
