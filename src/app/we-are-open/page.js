@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Header from '../components/Header';
-import WeAreOpenSection from '../components/we-are-open/WeAreOpenSection';
+import WeAreOpenSection from '../components/we-are-open/WeAreOpenSectionNew';
 import Footer from '../components/Footer';
 
 export default function WeAreOpenPage() {

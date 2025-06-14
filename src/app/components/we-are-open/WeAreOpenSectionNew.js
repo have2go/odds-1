@@ -5,11 +5,11 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 
 export default function WeAreOpenSection({ scrollY }) {
-    // Состояние формы
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
-        email: ''
+        email: '',
+        message: ''
     });
 
     const handleInputChange = (e) => {
@@ -29,13 +29,13 @@ export default function WeAreOpenSection({ scrollY }) {
         <section className="flex-1 flex items-center py-20 lg:py-0">
             <div className="w-full max-w-[1800px] mx-auto px-5 lg:px-[125px]">
                 
-                {/* Мобильная версия до 1280px - БЕЗ АНИМАЦИЙ */}
-                <div className="block xl:hidden">
+                {/* Мобильная версия до 1024px */}
+                <div className="lg:hidden pt-20">
                     
                     <h1
                         className="font-sf-pro gradient-text mb-8"
                         style={{
-                            fontSize: "clamp(60px, 10vw, 113px)",
+                            fontSize: "clamp(40px, 12vw, 80px)",
                             fontWeight: 300,
                             lineHeight: "96%",
                             letterSpacing: "0%"
@@ -45,9 +45,9 @@ export default function WeAreOpenSection({ scrollY }) {
                     </h1>
 
                     <p
-                        className="text-white/70 font-sf-pro leading-relaxed max-w-md mb-8"
+                        className="text-white/70 font-sf-pro leading-relaxed mb-8"
                         style={{
-                            fontSize: "clamp(16px, 2.5vw, 18px)",
+                            fontSize: "clamp(16px, 4vw, 18px)",
                             fontWeight: 300,
                             lineHeight: "1.6"
                         }}
@@ -69,12 +69,138 @@ export default function WeAreOpenSection({ scrollY }) {
 
                     <form
                         onSubmit={handleSubmit}
-                        className="w-full max-w-[500px] mx-auto lg:mx-0"
+                        className="w-full max-w-[500px]"
                     >
                         <div className="mb-[20px]">
                             <input
                                 type="text"
-                                id="name"
+                                id="mobile-name"
+                                name="name"
+                                placeholder="Name"
+                                value={formData.name}
+                                onChange={handleInputChange}
+                                className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none"
+                                style={{
+                                    background: '#FFFFFF0A',
+                                    fontSize: "clamp(16px, 4vw, 18px)",
+                                    fontWeight: 300
+                                }}
+                            />
+                        </div>
+
+                        <div className="mb-[20px]">
+                            <input
+                                type="tel"
+                                id="mobile-phone"
+                                name="phone"
+                                placeholder="Phone"
+                                value={formData.phone}
+                                onChange={handleInputChange}
+                                className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none"
+                                style={{
+                                    background: '#FFFFFF0A',
+                                    fontSize: "clamp(16px, 4vw, 18px)",
+                                    fontWeight: 300
+                                }}
+                            />
+                        </div>
+
+                        <div className="mb-[20px]">
+                            <input
+                                type="email"
+                                id="mobile-email"
+                                name="email"
+                                placeholder="E-mail"
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none"
+                                style={{
+                                    background: '#FFFFFF0A',
+                                    fontSize: "clamp(16px, 4vw, 18px)",
+                                    fontWeight: 300
+                                }}
+                            />
+                        </div>
+
+                        <div className="mb-[20px]">
+                            <textarea
+                                id="mobile-message"
+                                name="message"
+                                placeholder="Message (optional)"
+                                value={formData.message || ''}
+                                onChange={handleInputChange}
+                                rows={4}
+                                className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none resize-none"
+                                style={{
+                                    background: '#FFFFFF0A',
+                                    fontSize: "clamp(16px, 4vw, 18px)",
+                                    fontWeight: 300
+                                }}
+                            />
+                        </div>
+
+                        <button
+                            type="submit"
+                            className="w-full bg-white text-black font-sf-pro py-4 hover:bg-gray-200 transition-colors"
+                            style={{
+                                fontWeight: 400,
+                                fontSize: "clamp(14px, 4vw, 16px)",
+                                lineHeight: "120%",
+                                letterSpacing: "0%"
+                            }}
+                        >
+                            JOIN
+                        </button>
+                    </form>
+                </div>
+
+                {/* Средняя версия 1024-1280px */}
+                <div className="hidden lg:block xl:hidden pt-20 pb-20">
+                    
+                    <div className="pt-20">
+                        <h1
+                            className="font-sf-pro gradient-text mb-8"
+                            style={{
+                                fontSize: "clamp(60px, 10vw, 113px)",
+                                fontWeight: 300,
+                                lineHeight: "96%",
+                                letterSpacing: "0%"
+                            }}
+                        >
+                            We are open
+                        </h1>
+
+                        <p
+                            className="text-white/70 font-sf-pro leading-relaxed mb-8 max-w-2xl"
+                            style={{
+                                fontSize: "clamp(16px, 2.5vw, 18px)",
+                                fontWeight: 300,
+                                lineHeight: "1.6"
+                            }}
+                        >
+                            We are actively seeking collaborators who share our vision for a cleaner, more sustainable
+                            orbit. We welcome:
+                            <br/><br/>
+                            • <strong>Engineers and technical specialists</strong> committed to solving complex challenges
+                            <br/>
+                            • <strong>Investors</strong> who recognize the urgency and potential of space debris removal
+                            <br/>
+                            • <strong>Young minds</strong>, invited to participate in our educational competition featuring
+                            awards and opportunities for continued learning
+                            <br/>
+                            • <strong>Game developers</strong> interested in creating realistic orbital simulations
+                            <br/><br/>
+                            If you see yourself in this mission — we would be glad to hear from you.
+                        </p>
+
+                        <form
+                            onSubmit={handleSubmit}
+                            className="w-full max-w-[500px] pb-20"
+                        >
+                        <div className="mb-[20px]">
+                            <input
+                                type="text"
+                                id="tablet-name"
                                 name="name"
                                 placeholder="Name"
                                 value={formData.name}
@@ -91,7 +217,7 @@ export default function WeAreOpenSection({ scrollY }) {
                         <div className="mb-[20px]">
                             <input
                                 type="tel"
-                                id="phone"
+                                id="tablet-phone"
                                 name="phone"
                                 placeholder="Phone"
                                 value={formData.phone}
@@ -108,12 +234,29 @@ export default function WeAreOpenSection({ scrollY }) {
                         <div className="mb-[20px]">
                             <input
                                 type="email"
-                                id="email"
+                                id="tablet-email"
                                 name="email"
                                 placeholder="E-mail"
                                 value={formData.email}
                                 onChange={handleInputChange}
                                 className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none"
+                                style={{
+                                    background: '#FFFFFF0A',
+                                    fontSize: "clamp(16px, 2vw, 18px)",
+                                    fontWeight: 300
+                                }}
+                            />
+                        </div>
+
+                        <div className="mb-[20px]">
+                            <textarea
+                                id="tablet-message"
+                                name="message"
+                                placeholder="Message (optional)"
+                                value={formData.message || ''}
+                                onChange={handleInputChange}
+                                rows={4}
+                                className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none resize-none"
                                 style={{
                                     background: '#FFFFFF0A',
                                     fontSize: "clamp(16px, 2vw, 18px)",
@@ -135,16 +278,16 @@ export default function WeAreOpenSection({ scrollY }) {
                             JOIN
                         </button>
                     </form>
+                    </div>
                 </div>
 
-                {/* Десктопная версия от 1280px - С АНИМАЦИЯМИ */}
+                {/* Десктопная версия от 1280px */}
                 <DesktopVersion formData={formData} handleInputChange={handleInputChange} handleSubmit={handleSubmit} />
             </div>
         </section>
     );
 }
 
-// Десктопная версия с анимациями
 function DesktopVersion({ formData, handleInputChange, handleSubmit }) {
     const descriptionRef = useRef(null);
     const formRef = useRef(null);
@@ -234,7 +377,7 @@ function DesktopVersion({ formData, handleInputChange, handleSubmit }) {
                         >
                             <input
                                 type="text"
-                                id="name-desktop"
+                                id="desktop-name"
                                 name="name"
                                 placeholder="Name"
                                 value={formData.name}
@@ -260,7 +403,7 @@ function DesktopVersion({ formData, handleInputChange, handleSubmit }) {
                         >
                             <input
                                 type="tel"
-                                id="phone-desktop"
+                                id="desktop-phone"
                                 name="phone"
                                 placeholder="Phone"
                                 value={formData.phone}
@@ -286,12 +429,38 @@ function DesktopVersion({ formData, handleInputChange, handleSubmit }) {
                         >
                             <input
                                 type="email"
-                                id="email-desktop"
+                                id="desktop-email"
                                 name="email"
                                 placeholder="E-mail"
                                 value={formData.email}
                                 onChange={handleInputChange}
                                 className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none"
+                                style={{
+                                    background: '#FFFFFF0A',
+                                    fontSize: "clamp(16px, 2vw, 18px)",
+                                    fontWeight: 300
+                                }}
+                            />
+                        </motion.div>
+
+                        <motion.div
+                            className="mb-[20px]"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={isFormInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+                            transition={{ 
+                                duration: 0.6, 
+                                delay: 0.9,
+                                ease: [0.22, 1, 0.36, 1] 
+                            }}
+                        >
+                            <textarea
+                                id="desktop-message"
+                                name="message"
+                                placeholder="Message (optional)"
+                                value={formData.message || ''}
+                                onChange={handleInputChange}
+                                rows={4}
+                                className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none resize-none"
                                 style={{
                                     background: '#FFFFFF0A',
                                     fontSize: "clamp(16px, 2vw, 18px)",
@@ -313,7 +482,7 @@ function DesktopVersion({ formData, handleInputChange, handleSubmit }) {
                             animate={isFormInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             transition={{ 
                                 duration: 0.8, 
-                                delay: 0.9,
+                                delay: 1.0,
                                 ease: [0.22, 1, 0.36, 1] 
                             }}
                             whileHover={{ 
