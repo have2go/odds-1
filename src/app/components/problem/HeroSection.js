@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function HeroSection({ scrollY }) {
     return (
-        <section className="relative lg:h-screen flex items-center justify-center overflow-hidden min-h-[70vh] lg:min-h-0">
+        <section className="relative h-screen flex items-center justify-center overflow-hidden">
             {/* Фоновое изображение планеты с параллакс эффектом */}
             <div 
                 className="absolute inset-0 z-0"
@@ -26,7 +26,7 @@ export default function HeroSection({ scrollY }) {
             </div>
 
             {/* Контент */}
-            <div className="relative z-10 w-full max-w-[1680px] mx-auto px-5 lg:px-8 text-center py-12 lg:py-0">
+            <div className="relative z-10 w-full max-w-[1680px] mx-auto px-5 lg:px-8 text-center">
                 <motion.h1
                     className="font-sf-pro gradient-text mb-8"
                     style={{
