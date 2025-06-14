@@ -93,26 +93,47 @@ export default function ApproachExplanationSection() {
                         <div className="grid grid-cols-4 gap-2">
                             {oddsData.map((item, index) => (
                                 <div key={index} className="w-full">
-                                    <ODDSLetter
-                                        letter={item.letter}
-                                        word={item.word}
-                                        delay={item.delay}
-                                    />
+                                    <div className="flex flex-col items-center w-full">
+                                        {/* Квадрат с буквой */}
+                                        <div 
+                                            className="w-full flex items-center justify-center mb-3 lg:mb-6"
+                                            style={{
+                                                backgroundColor: "rgba(255, 255, 255, 0.05)",
+                                                aspectRatio: "260/326",
+                                            }}
+                                        >
+                                            <span 
+                                                className="font-sf-pro gradient-text"
+                                                style={{
+                                                    fontSize: "clamp(60px, 12vw, 146px)",
+                                                    fontWeight: 300,
+                                                    lineHeight: '110%',
+                                                    paddingBottom: '0.05em'
+                                                }}
+                                            >
+                                                {item.letter}
+                                            </span>
+                                        </div>
+                                        
+                                        {/* Слово под буквой */}
+                                        <p 
+                                            className="text-white font-sf-pro text-center"
+                                            style={{
+                                                fontSize: "clamp(10px, 2.5vw, 16px)",
+                                                fontWeight: 400,
+                                                letterSpacing: "0.1em",
+                                                textTransform: "uppercase"
+                                            }}
+                                        >
+                                            {item.word}
+                                        </p>
+                                    </div>
                                 </div>
                             ))}
                         </div>
 
                         {/* Абзац без ограничения ширины */}
-                        <motion.div
-                            ref={textRef}
-                            initial={{ opacity: 0, y: 40 }}
-                            animate={isTextInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-                            transition={{ 
-                                duration: 0.8, 
-                                delay: 1.2,
-                                ease: [0.22, 1, 0.36, 1] 
-                            }}
-                        >
+                        <div>
                             <p 
                                 className="text-white/80 font-sf-pro leading-relaxed"
                                 style={{
@@ -123,20 +144,10 @@ export default function ApproachExplanationSection() {
                             >
                                 ODDS serves as the central hub for space debris removal operations. The Orbital Debris Deorbiting Station functions as the only launch platform for FROG, enabling electromagnetic acceleration using an integrated Gauss gun. ODDS is not stationary — it orbits Earth while slowly and continuously changing its trajectory. This orbital nature allows ODDS to coordinate space debris removal missions and provide the necessary infrastructure for deploying FROG across different orbital zones.
                             </p>
-                        </motion.div>
+                        </div>
 
                         {/* Картинка */}
-                        <motion.div
-                            ref={stationRef}
-                            className="w-full"
-                            initial={{ opacity: 0, scale: 0.8, y: 100 }}
-                            animate={isStationInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 100 }}
-                            transition={{ 
-                                duration: 1.2, 
-                                delay: 0.5,
-                                ease: [0.22, 1, 0.36, 1] 
-                            }}
-                        >
+                        <div className="w-full">
                             <div className="relative w-full">
                                 <Image
                                     src="/images/station-frontal-2.png"
@@ -150,7 +161,7 @@ export default function ApproachExplanationSection() {
                                     }}
                                 />
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
 

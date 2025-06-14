@@ -72,8 +72,7 @@ export default function ApproachOrbitSection() {
                         {/* Первый блок - Dual-Axis Rotation */}
                         <motion.div
                             ref={firstBlockRef}
-                            className="border border-white/10 rounded-lg"
-                            style={{ padding: '40px' }}
+                            className="border border-white/10 rounded-lg p-5 lg:p-10"
                             initial={{ opacity: 0, y: 60 }}
                             animate={isFirstBlockInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
                             transition={{ 
@@ -102,7 +101,7 @@ export default function ApproachOrbitSection() {
                                         style={{
                                             fontFamily: 'SF Pro Display',
                                             fontWeight: 300,
-                                            fontSize: '48px',
+                                            fontSize: 'clamp(24px, 8vw, 48px)',
                                             lineHeight: '96%',
                                             letterSpacing: '0%',
                                             marginBottom: '34px'
@@ -118,7 +117,7 @@ export default function ApproachOrbitSection() {
                                         style={{
                                             fontFamily: 'SF Pro Display',
                                             fontWeight: 300,
-                                            fontSize: '26px',
+                                            fontSize: 'clamp(16px, 4vw, 20px)',
                                             lineHeight: '130%',
                                             letterSpacing: '-1%'
                                         }}
@@ -137,8 +136,7 @@ export default function ApproachOrbitSection() {
                         {/* Второй блок - Unmatched Flexibility */}
                         <motion.div
                             ref={secondBlockRef}
-                            className="border border-white/10 rounded-lg"
-                            style={{ padding: '40px' }}
+                            className="border border-white/10 rounded-lg p-5 lg:p-10"
                             initial={{ opacity: 0, y: 60 }}
                             animate={isSecondBlockInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
                             transition={{ 
@@ -169,7 +167,7 @@ export default function ApproachOrbitSection() {
                                         style={{
                                             fontFamily: 'SF Pro Display',
                                             fontWeight: 300,
-                                            fontSize: '48px',
+                                            fontSize: 'clamp(24px, 8vw, 48px)',
                                             lineHeight: '96%',
                                             letterSpacing: '0%',
                                             marginBottom: '34px'
@@ -184,7 +182,7 @@ export default function ApproachOrbitSection() {
                                             style={{
                                                 fontFamily: 'SF Pro Display',
                                                 fontWeight: 300,
-                                                fontSize: '26px',
+                                                fontSize: 'clamp(16px, 4vw, 20px)',
                                                 lineHeight: '130%',
                                                 letterSpacing: '-1%'
                                             }}
@@ -200,7 +198,7 @@ export default function ApproachOrbitSection() {
                                             style={{
                                                 fontFamily: 'SF Pro Display',
                                                 fontWeight: 300,
-                                                fontSize: '26px',
+                                                fontSize: 'clamp(16px, 4vw, 20px)',
                                                 lineHeight: '130%',
                                                 letterSpacing: '-1%'
                                             }}

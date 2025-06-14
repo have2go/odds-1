@@ -93,26 +93,47 @@ export default function ApproachFrogSection() {
                         <div className="grid grid-cols-4 gap-2">
                             {frogData.map((item, index) => (
                                 <div key={index} className="w-full">
-                                    <FROGLetter
-                                        letter={item.letter}
-                                        word={item.word}
-                                        delay={item.delay}
-                                    />
+                                    <div className="flex flex-col items-center w-full">
+                                        {/* Квадрат с буквой */}
+                                        <div 
+                                            className="w-full flex items-center justify-center mb-3 lg:mb-6"
+                                            style={{
+                                                backgroundColor: "rgba(255, 255, 255, 0.05)",
+                                                aspectRatio: "260/326",
+                                            }}
+                                        >
+                                            <span 
+                                                className="font-sf-pro gradient-text"
+                                                style={{
+                                                    fontSize: "clamp(60px, 12vw, 146px)",
+                                                    fontWeight: 300,
+                                                    lineHeight: '110%',
+                                                    paddingBottom: '0.05em'
+                                                }}
+                                            >
+                                                {item.letter}
+                                            </span>
+                                        </div>
+                                        
+                                        {/* Слово под буквой */}
+                                        <p 
+                                            className="text-white font-sf-pro text-center"
+                                            style={{
+                                                fontSize: "clamp(10px, 2.5vw, 16px)",
+                                                fontWeight: 400,
+                                                letterSpacing: "0.1em",
+                                                textTransform: "uppercase"
+                                            }}
+                                        >
+                                            {item.word}
+                                        </p>
+                                    </div>
                                 </div>
                             ))}
                         </div>
 
                         {/* Абзац без ограничения ширины */}
-                        <motion.div
-                            ref={textRef}
-                            initial={{ opacity: 0, y: 40 }}
-                            animate={isTextInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-                            transition={{ 
-                                duration: 0.8, 
-                                delay: 1.2,
-                                ease: [0.22, 1, 0.36, 1] 
-                            }}
-                        >
+                        <div>
                             <p 
                                 className="text-white/80 font-sf-pro leading-relaxed"
                                 style={{
@@ -123,20 +144,10 @@ export default function ApproachFrogSection() {
                             >
                                 The Feasible Remediation Orbital Gatherer (F.R.O.G.) is a specialized spacecraft designed to address the issue of space debris. It operates by actively collecting and removing orbital junk, thereby contributing to the restoration of a safer and more sustainable space environment. This innovative solution focuses on the remediation process, which involves correcting and cleaning up problems in space, similar to environmental cleanup efforts on Earth. F.R.O.G. represents a practical approach to tackling the growing challenge of space debris, ensuring that Earth's orbit remains clear and functional for future space activities.
                             </p>
-                        </motion.div>
+                        </div>
 
                         {/* Картинки */}
-                        <motion.div
-                            ref={frogRef}
-                            className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8"
-                            initial={{ opacity: 0, scale: 0.8, y: 100 }}
-                            animate={isFrogInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 100 }}
-                            transition={{ 
-                                duration: 1.2, 
-                                delay: 0.5,
-                                ease: [0.22, 1, 0.36, 1] 
-                            }}
-                        >
+                        <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8">
                             <div className="relative flex-1 max-w-sm mx-auto">
                                 <Image
                                     src="/images/frog.png"
@@ -163,7 +174,7 @@ export default function ApproachFrogSection() {
                                     }}
                                 />
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
 

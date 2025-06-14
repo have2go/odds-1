@@ -164,24 +164,25 @@ export default function ApproachCostSection() {
                     {costItems.map((item, index) => (
                         <div
                             key={index}
-                            className={`flex justify-between items-center py-4 px-4 ${
+                            className={`flex justify-between items-center py-4 ${
                                 index % 2 === 0 ? 'bg-black' : 'bg-[#FFFFFF0A]'
                             }`}
                         >
                             <span 
                                 className="text-white/80 font-sf-pro"
                                 style={{
-                                    fontSize: "clamp(14px, 4vw, 16px)",
+                                    fontSize: "clamp(12px, 3.5vw, 14px)",
                                     fontWeight: 300
                                 }}
                             >
                                 {item.item}
                             </span>
                             <span 
-                                className="text-white font-sf-pro"
+                                className="text-white font-sf-pro text-right"
                                 style={{
-                                    fontSize: "clamp(14px, 4vw, 16px)",
-                                    fontWeight: 400
+                                    fontSize: "clamp(12px, 3.5vw, 14px)",
+                                    fontWeight: 400,
+                                    whiteSpace: "nowrap"
                                 }}
                             >
                                 {item.cost}
@@ -194,17 +195,18 @@ export default function ApproachCostSection() {
                         <span 
                             className="text-black font-sf-pro"
                             style={{
-                                fontSize: "clamp(16px, 4.5vw, 18px)",
+                                fontSize: "clamp(14px, 4vw, 16px)",
                                 fontWeight: 400
                             }}
                         >
                             Total costs
                         </span>
                         <span 
-                            className="text-black font-sf-pro"
+                            className="text-black font-sf-pro text-right"
                             style={{
-                                fontSize: "clamp(16px, 4.5vw, 18px)",
-                                fontWeight: 600
+                                fontSize: "clamp(14px, 4vw, 16px)",
+                                fontWeight: 600,
+                                whiteSpace: "nowrap"
                             }}
                         >
                             {"< 10 000 000 000 $"}
