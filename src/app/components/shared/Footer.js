@@ -22,7 +22,7 @@ export default function Footer() {
             
             {/* Футер */}
             <motion.footer 
-                className="w-full max-w-[1680px] mx-auto py-8"
+                className="w-full max-w-[1680px] mx-auto p-5 lg:py-8 lg:px-[125px]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

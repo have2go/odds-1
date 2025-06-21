@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function ProblemMain({ scrollY }) {
     return (
-        <section className="relative h-screen flex pt-[160px] md:pt-0 md:items-center justify-center overflow-hidden">
+        <section className="relative min-h-svh flex pt-[160px] md:pt-0 md:items-center justify-center overflow-hidden">
             {/* Фоновое изображение планеты с параллакс эффектом */}
             <div
                 className="absolute inset-0 z-0"
@@ -18,7 +18,7 @@ export default function ProblemMain({ scrollY }) {
                     alt="Problem background"
                     fill
                     priority
-                    quality={100}
+                    quality={50}
                     className="object-cover scale-110"
                 />
                 {/* Дополнительное затемнение для лучшей читаемости текста */}

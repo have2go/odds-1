@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import TransitionLink from './TransitionLink';
+import TransitionLink from '../TransitionLink';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Компонент хедера (шапки) сайта с мобильным меню

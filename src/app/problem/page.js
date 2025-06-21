@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Header from '@/app/components/Header';
+import Header from '@/app/components/shared/Header';
 import ProblemMain from './components/ProblemMain';
 import SatellitesSection from './components/SatellitesSection';
 import VideoSection from './components/VideoSection';
@@ -11,7 +11,7 @@ import ChainReactionSection from './components/ChainReactionSection';
 import CulturalReflectionsSection from './components/CulturalReflectionsSection';
 import QuestionsAnswersSection from './components/QuestionsAnswersSection';
 import CallToActionSection from '@/app/components/shared/CallToActionSection';
-import Footer from '@/app/components/Footer';
+import Footer from '@/app/components/shared/Footer';
 
 export default function ProblemPage() {
     const [scrollY, setScrollY] = useState(0);
@@ -34,7 +34,7 @@ export default function ProblemPage() {
     return (
         <div 
             ref={containerRef}
-            className="min-h-screen bg-black text-white"
+            className="bg-black text-white"
         >
             {/* Шапка */}
             <Header visible={true} />

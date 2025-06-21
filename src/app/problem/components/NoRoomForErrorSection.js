@@ -21,17 +21,6 @@ function DesktopFailureSection({whiteBarRefProp}) {
         const handleScroll = () => {
             forceUpdate({});
 
-            if (stickyContainerRef.current && whiteBarRefProp.current) {
-                const stickyRect = stickyContainerRef.current.getBoundingClientRect();
-                const whiteBarRect = whiteBarRefProp.current.getBoundingClientRect();
-
-                if (stickyRect.top > whiteBarRect.bottom) {
-                    setShowImage(true);
-                } else {
-                    setShowImage(false);
-                }
-            }
-
             if (showImage) {
                 const viewportCenter = window.innerHeight / 2;
 
@@ -91,7 +80,7 @@ function DesktopFailureSection({whiteBarRefProp}) {
         <div className="relative z-10 flex">
             {/* Левая половина - изображения (sticky) */}
             <div className="flex-1 relative">
-                <div ref={stickyContainerRef} className="sticky top-[65%] -translate-y-1/2 px-8 flex justify-center">
+                <div ref={stickyContainerRef} className="sticky top-[70%] -translate-y-1/2 px-8 flex justify-center">
                     <div className="relative w-full max-w-[600px] h-[400px]">
                         {[1, 2, 3, 4].map((imageIndex) => (
                             <div
@@ -105,7 +94,6 @@ function DesktopFailureSection({whiteBarRefProp}) {
                                     src={`/images/failure-${imageIndex}.png`}
                                     alt={`Failure consequence ${imageIndex}`}
                                     fill
-                                    quality={100}
                                     className="object-contain"
                                     priority={imageIndex === 1}
                                 />
@@ -117,7 +105,7 @@ function DesktopFailureSection({whiteBarRefProp}) {
 
             {/* Правая половина - пункты */}
             <div className="flex-1">
-                <div className="h-[100px]"></div>
+                <div className="h-[230px]"></div>
 
                 {/* Пункт 01 */}
                 <div
@@ -287,7 +275,7 @@ function DesktopFailureSection({whiteBarRefProp}) {
                     </motion.div>
                 </div>
 
-                <div className="h-[50vh]"></div>
+                <div className="h-[90vh]"></div>
             </div>
         </div>
     );
@@ -518,9 +506,9 @@ export default function NoRoomForErrorSection() {
                                     <Image
                                         src={item.image}
                                         alt={`Failure consequence ${item.id}`}
-                                        width={113}
-                                        height={113}
-                                        quality={75}
+                                        width={213}
+                                        height={213}
+                                        quality={60}
                                         className="w-[80%] mx-auto h-full object-contain"
                                         priority={index === 0}
                                     />

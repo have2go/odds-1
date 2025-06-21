@@ -154,7 +154,6 @@ export default function ApproachExplanationSection() {
                                     alt="ODDS Station Frontal View"
                                     width={1800}
                                     height={600}
-                                    quality={100}
                                     className="object-contain w-full"
                                     style={{
                                         filter: 'drop-shadow(0 0 40px rgba(255, 255, 255, 0.1))'
@@ -227,7 +226,6 @@ export default function ApproachExplanationSection() {
                                 alt="ODDS Station Frontal View"
                                 width={1800}
                                 height={600}
-                                quality={100}
                                 className="object-contain w-full"
                                 style={{
                                     filter: 'drop-shadow(0 0 40px rgba(255, 255, 255, 0.1))'

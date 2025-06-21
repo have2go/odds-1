@@ -48,7 +48,7 @@ export default function CulturalReflectionsSection() {
                         >
                             <Card className="relative overflow-hidden border-0 bg-transparent shadow-none">
                                 <div className="relative w-full" style={{ aspectRatio: '830/572' }}>
-                                    <Image src="/images/bg-gravity.jpg" alt="Gravity movie scene" fill quality={100} className="object-cover" />
+                                    <Image src="/images/bg-gravity.jpg" alt="Gravity movie scene" fill quality={50} className="object-cover" />
                                     <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
                                     <CardContent className="absolute bottom-0 left-0 right-0 p-10">
                                         <h3 className="font-sf-pro text-white mb-5" style={{fontWeight: "300", fontSize: "48px", lineHeight: "96%", letterSpacing: "0%"}}>Gravity (2013)</h3>
@@ -72,7 +72,7 @@ export default function CulturalReflectionsSection() {
                         >
                             <Card className="relative overflow-hidden border-0 bg-transparent shadow-none">
                                 <div className="relative w-full" style={{ aspectRatio: '830/572' }}>
-                                    <Image src="/images/bg-gorkaviy.jpg" alt="Space debris illustration" fill quality={100} className="object-cover" />
+                                    <Image src="/images/bg-gorkaviy.jpg" alt="Space debris illustration" fill quality={40} className="object-cover" />
                                     <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
                                     <CardContent className="absolute bottom-0 left-0 right-0 p-10">
                                         <h3 className="font-sf-pro text-white mb-5" style={{fontWeight: "300", fontSize: "48px", lineHeight: "96%", letterSpacing: "0%"}}>Nikolai Gorkavyi</h3>

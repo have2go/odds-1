@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Header from '@/app/components/Header';
+import Header from '@/app/components/shared/Header';
 import ApproachHeroSection from './components/ApproachHeroSection';
 import ApproachFirstStepSection from './components/ApproachFirstStepSection';
 import ApproachFrogSection from './components/ApproachFrogSection';
@@ -10,7 +10,7 @@ import ApproachChallengeSection from './components/ApproachChallengeSection';
 import ApproachOrbitSection from './components/ApproachOrbitSection';
 import ApproachCostSection from './components/ApproachCostSection';
 import CallToActionSection from '@/app/components/shared/CallToActionSection';
-import Footer from '@/app/components/Footer';
+import Footer from '@/app/components/shared/Footer';
 
 export default function ApproachPage() {
     const [scrollY, setScrollY] = useState(0);

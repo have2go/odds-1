@@ -90,7 +90,6 @@ export default function ApproachHeroSection({ scrollY }) {
                     alt="Space background"
                     fill
                     priority
-                    quality={100}
                     className="object-cover scale-110"
                 />
                 {/* Дополнительное затемнение для лучшей читаемости текста */}
@@ -121,7 +120,6 @@ export default function ApproachHeroSection({ scrollY }) {
                             alt="ODDS Station"
                             width={1080}
                             height={540}
-                            quality={100}
                             className="object-contain"
                             style={{
                                 filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.1))'
@@ -158,7 +156,6 @@ export default function ApproachHeroSection({ scrollY }) {
                             alt="ODDS Station"
                             width={874}
                             height={249}
-                            quality={100}
                             className="w-full h-full object-contain"
                             style={{
                                 filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.1))'

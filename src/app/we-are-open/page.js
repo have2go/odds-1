@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Header from '@/app/components/Header';
+import Header from '@/app/components/shared/Header';
 import WeAreOpenSection from './components/WeAreOpenSectionNew';
-import Footer from '@/app/components/Footer';
+import Footer from '@/app/components/shared/Footer';
 
 export default function WeAreOpenPage() {
     const [scrollY, setScrollY] = useState(0);

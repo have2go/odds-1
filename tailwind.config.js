@@ -25,6 +25,10 @@ module.exports = {
       height: {
         '80px': '80px',
       },
+      minHeight: {
+        'screen-dvh': '100dvh',
+      },
+
       colors: {
         // shadcn/ui цвета с префиксом sh-
         'sh-border': "hsl(var(--sh-border))",

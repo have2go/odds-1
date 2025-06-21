@@ -154,7 +154,6 @@ export default function ApproachFrogSection() {
                                     alt="FROG Device"
                                     width={400}
                                     height={280}
-                                    quality={100}
                                     className="object-contain w-full h-auto"
                                     style={{
                                         filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.1))'
@@ -167,7 +166,6 @@ export default function ApproachFrogSection() {
                                     alt="FROG Compact Device"
                                     width={400}
                                     height={280}
-                                    quality={100}
                                     className="object-contain w-full h-auto"
                                     style={{
                                         filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.1))'
@@ -240,7 +238,6 @@ export default function ApproachFrogSection() {
                                 alt="FROG Device"
                                 width={500}
                                 height={350}
-                                quality={100}
                                 className="object-contain"
                                 style={{
                                     filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.1))'
@@ -253,7 +250,6 @@ export default function ApproachFrogSection() {
                                 alt="FROG Compact Device"
                                 width={500}
                                 height={350}
-                                quality={100}
                                 className="object-contain"
                                 style={{
                                     filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.1))'
