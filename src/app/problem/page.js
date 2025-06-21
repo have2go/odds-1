@@ -1,18 +1,17 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Header from '../components/Header';
-import HeroSection from '../components/problem/HeroSection';
-import SatellitesSection from '../components/problem/SatellitesSection';
-import VideoSection from '../components/problem/VideoSection';
-import RealProblemSection from '../components/problem/RealProblemSection';
-import KesslerImageSection from '../components/problem/KesslerImageSection';
-import NoRoomForErrorSection from '../components/problem/NoRoomForErrorSection';
-import ChainReactionSection from '../components/problem/ChainReactionSection';
-import CulturalReflectionsSection from '../components/problem/CulturalReflectionsSection';
-import QuestionsAnswersSection from '../components/problem/QuestionsAnswersSection';
-import CallToActionSection from '../components/shared/CallToActionSection';
-import Footer from '../components/Footer';
+import Header from '@/app/components/Header';
+import ProblemMain from './components/ProblemMain';
+import SatellitesSection from './components/SatellitesSection';
+import VideoSection from './components/VideoSection';
+import RealProblemSection from './components/RealProblemSection';
+import NoRoomForErrorSection from './components/NoRoomForErrorSection';
+import ChainReactionSection from './components/ChainReactionSection';
+import CulturalReflectionsSection from './components/CulturalReflectionsSection';
+import QuestionsAnswersSection from './components/QuestionsAnswersSection';
+import CallToActionSection from '@/app/components/shared/CallToActionSection';
+import Footer from '@/app/components/Footer';
 
 export default function ProblemPage() {
     const [scrollY, setScrollY] = useState(0);
@@ -41,11 +40,10 @@ export default function ProblemPage() {
             <Header visible={true} />
             
             {/* Секции */}
-            <HeroSection scrollY={scrollY} />
+            <ProblemMain scrollY={scrollY} />
             <SatellitesSection />
             <VideoSection />
             <RealProblemSection />
-            {/* <KesslerImageSection /> */}
             <NoRoomForErrorSection />
             <ChainReactionSection />
             <CulturalReflectionsSection />

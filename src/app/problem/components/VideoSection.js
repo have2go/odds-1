@@ -7,7 +7,7 @@ export default function VideoSection() {
         <section className="relative bg-black">
             {/* Контейнер для всего контента */}
             <div className="w-full max-w-[1680px] mx-auto">
-                
+
                 {/* Десктоп версия - видео фон с текстом справа */}
                 <div className="hidden lg:block relative overflow-hidden h-screen">
                     {/* Фоновое видео - смещено на 30% влево */}
@@ -26,7 +26,7 @@ export default function VideoSection() {
                                 </span>
                             </div>
                         </video>
-                        
+
                         {/* Градиентные фейды */}
                         <div className="absolute left-0 top-0 w-[20%] h-full bg-gradient-to-r from-black to-transparent"></div>
                         <div className="absolute right-0 top-0 w-[20%] h-full bg-gradient-to-l from-black to-transparent"></div>
@@ -42,9 +42,9 @@ export default function VideoSection() {
                             initial={{ opacity: 0, x: 50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ 
+                            transition={{
                                 duration: 1.2,
-                                ease: [0.22, 1, 0.36, 1] 
+                                ease: [0.22, 1, 0.36, 1]
                             }}
                         >
                             <h3
@@ -58,7 +58,7 @@ export default function VideoSection() {
                             >
                                 Kessler syndrome
                             </h3>
-                            
+
                             <p
                                 className="font-sf-pro text-gray-300 mb-6"
                                 style={{
@@ -70,7 +70,7 @@ export default function VideoSection() {
                             >
                                 The most alarming aspect is the "Kessler Syndrome" – a scenario where debris density becomes high enough that collisions trigger a cascade of further collisions. This chain reaction could render certain orbits unusable for generations, potentially cutting off our access to space.
                             </p>
-                            
+
                             <p
                                 className="font-sf-pro text-gray-300 mb-6"
                                 style={{
@@ -82,7 +82,7 @@ export default function VideoSection() {
                             >
                                 The most heavily polluted regions include Low Earth Orbit (LEO) at 750-1,000 km and Geostationary Orbit (GEO) at approximately 36,000 km. In 2009, we witnessed the first major accidental collision between two intact satellites – Iridium 33 and Cosmos 2251 – creating over 2,300 trackable fragments and countless smaller pieces.
                             </p>
-                            
+
                             <p
                                 className="font-sf-pro text-gray-300"
                                 style={{
@@ -120,14 +120,14 @@ export default function VideoSection() {
                     </div>
 
                     {/* Текстовый блок */}
-                    <div className="px-5 py-20">
+                    <div className="px-5 pt-7 pb-24">
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ 
+                            transition={{
                                 duration: 1.2,
-                                ease: [0.22, 1, 0.36, 1] 
+                                ease: [0.22, 1, 0.36, 1]
                             }}
                         >
                             <h3
@@ -141,7 +141,7 @@ export default function VideoSection() {
                             >
                                 Kessler syndrome
                             </h3>
-                            
+
                             <p
                                 className="font-sf-pro text-gray-300 mb-4"
                                 style={{
@@ -153,7 +153,7 @@ export default function VideoSection() {
                             >
                                 The most alarming aspect is the "Kessler Syndrome" – a scenario where debris density becomes high enough that collisions trigger a cascade of further collisions. This chain reaction could render certain orbits unusable for generations, potentially cutting off our access to space.
                             </p>
-                            
+
                             <p
                                 className="font-sf-pro text-gray-300 mb-4"
                                 style={{
@@ -165,7 +165,7 @@ export default function VideoSection() {
                             >
                                 The most heavily polluted regions include Low Earth Orbit (LEO) at 750-1,000 km and Geostationary Orbit (GEO) at approximately 36,000 km. In 2009, we witnessed the first major accidental collision between two intact satellites – Iridium 33 and Cosmos 2251 – creating over 2,300 trackable fragments and countless smaller pieces.
                             </p>
-                            
+
                             <p
                                 className="font-sf-pro text-gray-300"
                                 style={{

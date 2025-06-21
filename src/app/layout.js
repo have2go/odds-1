@@ -1,5 +1,5 @@
 import "./globals.css";
-import PageTransitionProvider from "./components/PageTransitionProvider";
+import PageTransitionProvider from "@/app/components/PageTransitionProvider";
 
 export const metadata = {
   title: "ODDS | Orbital Debris Disposal System",

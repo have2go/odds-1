@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Card, CardContent } from "../ui/card";
+import { Card, CardContent } from "@/app/components/ui/card";
 import { ExternalLink } from "lucide-react";
 
 export default function CulturalReflectionsSection() {

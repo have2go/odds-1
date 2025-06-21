@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Header from '../components/Header';
-import IdeasHeroSection from '../components/ideas/IdeasHeroSection';
-import CallToActionSection from '../components/shared/CallToActionSection';
-import Footer from '../components/Footer';
+import Header from '@/app/components/Header';
+import IdeasHeroSection from './components/IdeasHeroSection';
+import CallToActionSection from '@/app/components/shared/CallToActionSection';
+import Footer from '@/app/components/Footer';
 
 export default function IdeasPage() {
     const [scrollY, setScrollY] = useState(0);

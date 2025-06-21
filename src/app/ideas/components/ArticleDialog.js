@@ -7,8 +7,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../ui/dialog";
-import { Button } from "../ui/button";
+} from "@/app/components/ui/dialog";
+import { Button } from "@/app/components/ui/button";
 import { ExternalLink, Calendar, Clock } from "lucide-react";
 import Image from 'next/image';
 

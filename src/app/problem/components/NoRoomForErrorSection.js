@@ -3,10 +3,10 @@
 import {useState, useEffect, useRef} from 'react';
 import {motion} from 'framer-motion';
 import Image from 'next/image';
-import ImagePreloader from '../ImagePreloader';
+import ImagePreloader from '@/app/components/ImagePreloader';
 
 // Компонент для десктопной sticky логики
-function DesktopFailureSection({ whiteBarRefProp }) {
+function DesktopFailureSection({whiteBarRefProp}) {
     const [, forceUpdate] = useState({});
     const [activeImage, setActiveImage] = useState(1);
     const [showImage, setShowImage] = useState(false);
@@ -20,42 +20,42 @@ function DesktopFailureSection({ whiteBarRefProp }) {
     useEffect(() => {
         const handleScroll = () => {
             forceUpdate({});
-            
+
             if (stickyContainerRef.current && whiteBarRefProp.current) {
                 const stickyRect = stickyContainerRef.current.getBoundingClientRect();
                 const whiteBarRect = whiteBarRefProp.current.getBoundingClientRect();
-                
+
                 if (stickyRect.top > whiteBarRect.bottom) {
                     setShowImage(true);
                 } else {
                     setShowImage(false);
                 }
             }
-            
+
             if (showImage) {
                 const viewportCenter = window.innerHeight / 2;
-                
+
                 if (item1Ref.current) {
                     const item1Rect = item1Ref.current.getBoundingClientRect();
                     if (item1Rect.top <= viewportCenter && item1Rect.bottom >= viewportCenter) {
                         setActiveImage(1);
                     }
                 }
-                
+
                 if (item2Ref.current) {
                     const item2Rect = item2Ref.current.getBoundingClientRect();
                     if (item2Rect.top <= viewportCenter && item2Rect.bottom >= viewportCenter) {
                         setActiveImage(2);
                     }
                 }
-                
+
                 if (item3Ref.current) {
                     const item3Rect = item3Ref.current.getBoundingClientRect();
                     if (item3Rect.top <= viewportCenter && item3Rect.bottom >= viewportCenter) {
                         setActiveImage(3);
                     }
                 }
-                
+
                 if (item4Ref.current) {
                     const item4Rect = item4Ref.current.getBoundingClientRect();
                     if (item4Rect.top <= viewportCenter && item4Rect.bottom >= viewportCenter) {
@@ -295,7 +295,7 @@ function DesktopFailureSection({ whiteBarRefProp }) {
 
 export default function NoRoomForErrorSection() {
     const whiteBarRef = useRef(null); // Добавляем ref для белой полоски
-    
+
     const failureItems = [
         {
             id: 1,
@@ -305,14 +305,14 @@ export default function NoRoomForErrorSection() {
         },
         {
             id: 2,
-            number: "02", 
+            number: "02",
             title: "Critical satellite infrastructure for global communications and navigation",
             image: "/images/failure-2.png"
         },
         {
             id: 3,
             number: "03",
-            title: "Weather forecasting and Earth observation capabilities", 
+            title: "Weather forecasting and Earth observation capabilities",
             image: "/images/failure-3.png"
         },
         {
@@ -326,10 +326,10 @@ export default function NoRoomForErrorSection() {
     return (
         <section className="relative bg-black">
             {/* Предзагрузка изображений failure */}
-            <ImagePreloader 
+            <ImagePreloader
                 images={[
                     '/images/failure-1.png',
-                    '/images/failure-2.png', 
+                    '/images/failure-2.png',
                     '/images/failure-3.png',
                     '/images/failure-4.png'
                 ]}
@@ -337,7 +337,7 @@ export default function NoRoomForErrorSection() {
             />
 
             <div className="w-full max-w-[1680px] mx-auto">
-                
+
                 {/* Десктопная версия - оригинальная sticky логика */}
                 <div className="hidden lg:block">
                     {/* Sticky верхняя часть */}
@@ -386,8 +386,10 @@ export default function NoRoomForErrorSection() {
                                         ease: [0.22, 1, 0.36, 1]
                                     }}
                                 >
-                                    Regardless of the exact probability of a full Kessler Syndrome – whether it's 1% or 90% –
-                                    humanity cannot afford this risk. The consequences would be catastrophic and effectively
+                                    Regardless of the exact probability of a full Kessler Syndrome – whether it's 1% or
+                                    90% –
+                                    humanity cannot afford this risk. The consequences would be catastrophic and
+                                    effectively
                                     irreversible within our lifetime.
                                 </motion.p>
                             </div>
@@ -421,12 +423,12 @@ export default function NoRoomForErrorSection() {
                     </div>
 
                     {/* Скроллируемые пункты с изображениями - ПОЛНАЯ ОРИГИНАЛЬНАЯ ЛОГИКА */}
-                    <DesktopFailureSection whiteBarRefProp={whiteBarRef} />
+                    <DesktopFailureSection whiteBarRefProp={whiteBarRef}/>
                 </div>
 
                 {/* Мобильная и планшетная версия */}
                 <div className="lg:hidden">
-                    <div className="px-5 pt-12 pb-8">
+                    <div className="px-5 pt-7">
                         {/* Заголовок */}
                         <motion.h2
                             className="font-sf-pro gradient-text mb-6"
@@ -501,7 +503,7 @@ export default function NoRoomForErrorSection() {
                         {failureItems.map((item, index) => (
                             <motion.div
                                 key={item.id}
-                                className="flex items-center space-x-6"
+                                className="flex items-center"
                                 initial={{opacity: 0, y: 50}}
                                 whileInView={{opacity: 1, y: 0}}
                                 viewport={{once: true, margin: "-100px"}}
@@ -513,22 +515,20 @@ export default function NoRoomForErrorSection() {
                             >
                                 {/* Левая половина - изображение */}
                                 <div className="flex-1">
-                                    <div className="w-full aspect-video max-w-sm">
-                                        <Image
-                                            src={item.image}
-                                            alt={`Failure consequence ${item.id}`}
-                                            width={400}
-                                            height={300}
-                                            quality={100}
-                                            className="w-full h-full object-contain"
-                                            priority={index === 0}
-                                        />
-                                    </div>
+                                    <Image
+                                        src={item.image}
+                                        alt={`Failure consequence ${item.id}`}
+                                        width={113}
+                                        height={113}
+                                        quality={75}
+                                        className="w-[80%] mx-auto h-full object-contain"
+                                        priority={index === 0}
+                                    />
                                 </div>
 
                                 {/* Правая половина - номер и заголовок */}
                                 <div className="flex-1">
-                                    <div className="flex items-start space-x-4">
+                                    <div className="flex flex-col items-start space-x-4 gap-2">
                                         <span
                                             className="font-sf-pro flex-shrink-0"
                                             style={{

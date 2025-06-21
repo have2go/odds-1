@@ -3,11 +3,11 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-export default function HeroSection({ scrollY }) {
+export default function ProblemMain({ scrollY }) {
     return (
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative h-screen flex pt-[160px] md:pt-0 md:items-center justify-center overflow-hidden">
             {/* Фоновое изображение планеты с параллакс эффектом */}
-            <div 
+            <div
                 className="absolute inset-0 z-0"
                 style={{
                     transform: `translateY(${scrollY * 0.5}px)`,
@@ -37,9 +37,9 @@ export default function HeroSection({ scrollY }) {
                     }}
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ 
-                        duration: 1.2, 
-                        ease: [0.22, 1, 0.36, 1] 
+                    transition={{
+                        duration: 1.2,
+                        ease: [0.22, 1, 0.36, 1]
                     }}
                 >
                     Space debris represents a critical threat to our future in space
@@ -51,7 +51,7 @@ export default function HeroSection({ scrollY }) {
                 className="absolute bottom-[60px] left-1/2 transform -translate-x-1/2 z-20 cursor-pointer hidden lg:block"
                 onClick={() => {
                     window.scrollTo({
-                        top: window.innerHeight,
+                        top: window.innerHeight - 80,
                         behavior: 'smooth'
                     });
                 }}
@@ -59,7 +59,7 @@ export default function HeroSection({ scrollY }) {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 0.5 }}
             >
-                <img
+                <Image
                     src="/images/icons/arrow-down.svg"
                     alt="Scroll down"
                     width={63}
@@ -69,6 +69,42 @@ export default function HeroSection({ scrollY }) {
                         cursor: "pointer"
                     }}
                 />
+                <Image
+                    src="/images/icons/arrow-down.svg"
+                    alt="Scroll down"
+                    width={58}
+                    height={58}
+                    className="lg:hidden"
+                    style={{
+                        animation: "customBounce 3s infinite",
+                        cursor: "pointer"
+                    }}
+                />
+
+            </motion.div>
+            <motion.div
+                className="absolute bottom-[60px] left-1/2 transform -translate-x-1/2 z-20 cursor-pointer lg:hidden"
+                onClick={() => {
+                    window.scrollTo({
+                        top: window.innerHeight - 60,
+                        behavior: 'smooth'
+                    });
+                }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.5, duration: 0.5 }}
+            >
+                <Image
+                    src="/images/icons/arrow-down.svg"
+                    alt="Scroll down"
+                    width={58}
+                    height={58}
+                    style={{
+                        animation: "customBounce 3s infinite",
+                        cursor: "pointer"
+                    }}
+                />
+
             </motion.div>
         </section>
     );

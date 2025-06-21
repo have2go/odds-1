@@ -6,17 +6,6 @@ import Image from 'next/image';
 export default function SatellitesSection() {
     return (
         <section className="relative lg:h-screen flex items-center justify-start overflow-hidden bg-black">
-            {/* Изображение тени в правом нижнем углу */}
-            <div className="absolute bottom-0 right-0 z-0">
-                <Image
-                    src="/images/shadow-problem.png"
-                    alt="Shadow"
-                    width={800}
-                    height={600}
-                    className="object-contain opacity-60"
-                />
-            </div>
-
             {/* Десктопная версия */}
             <div className="hidden lg:block relative z-10 w-full max-w-[1680px] mx-auto px-8 h-full">
                 {/* Первый текст - выравнен к левому краю */}
@@ -73,7 +62,7 @@ export default function SatellitesSection() {
             </div>
 
             {/* Мобильная версия - простая вертикальная структура */}
-            <div className="lg:hidden relative z-10 w-full max-w-[1680px] mx-auto px-5 py-20">
+            <div className="lg:hidden relative z-10 w-full max-w-[1680px] mx-auto px-5 pt-20 pb-24">
                 <div className="flex flex-col gap-8">
                     {/* Первый текст */}
                     <motion.div

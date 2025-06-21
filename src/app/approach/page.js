@@ -1,16 +1,16 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Header from '../components/Header';
-import ApproachHeroSection from '../components/approach/ApproachHeroSection';
-import ApproachFirstStepSection from '../components/approach/ApproachFirstStepSection';
-import ApproachFrogSection from '../components/approach/ApproachFrogSection';
-import ApproachExplanationSection from '../components/approach/ApproachExplanationSection';
-import ApproachChallengeSection from '../components/approach/ApproachChallengeSection';
-import ApproachOrbitSection from '../components/approach/ApproachOrbitSection';
-import ApproachCostSection from '../components/approach/ApproachCostSection';
-import CallToActionSection from '../components/shared/CallToActionSection';
-import Footer from '../components/Footer';
+import Header from '@/app/components/Header';
+import ApproachHeroSection from './components/ApproachHeroSection';
+import ApproachFirstStepSection from './components/ApproachFirstStepSection';
+import ApproachFrogSection from './components/ApproachFrogSection';
+import ApproachExplanationSection from './components/ApproachExplanationSection';
+import ApproachChallengeSection from './components/ApproachChallengeSection';
+import ApproachOrbitSection from './components/ApproachOrbitSection';
+import ApproachCostSection from './components/ApproachCostSection';
+import CallToActionSection from '@/app/components/shared/CallToActionSection';
+import Footer from '@/app/components/Footer';
 
 export default function ApproachPage() {
     const [scrollY, setScrollY] = useState(0);

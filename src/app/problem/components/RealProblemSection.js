@@ -5,18 +5,7 @@ import Image from 'next/image';
 
 export default function RealProblemSection() {
     return (
-        <section className="relative bg-black overflow-hidden py-20 lg:py-[120px] lg:pb-[240px]">
-            {/* Изображение тени в правом нижнем углу */}
-            <div className="absolute bottom-0 right-0 z-0">
-                <Image
-                    src="/images/shadow-problem.png"
-                    alt="Shadow"
-                    width={800}
-                    height={600}
-                    className="object-contain opacity-60"
-                />
-            </div>
-
+        <section className="relative bg-black overflow-hidden pt-7 pb-24 lg:py-[120px] lg:pb-[240px]">
             {/* Десктопная версия - горизонтальная компоновка */}
             <div className="hidden lg:block relative z-10 w-full max-w-[1680px] mx-auto px-8">
                 <div className="flex items-start space-x-16">

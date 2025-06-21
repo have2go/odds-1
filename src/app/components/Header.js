@@ -33,7 +33,7 @@ export default function Header({ visible = true }) {
                     ease: [0.22, 1, 0.36, 1]
                 }}
             >
-                <div className="max-w-[1680px] mx-auto flex justify-between items-center h-[80px] px-5 md:px-8">
+                <div className="max-w-[1680px] mx-auto flex justify-between items-center h-[60px] md:h-[80px] px-5 md:px-8">
                     {/* Логотип */}
                     <TransitionLink
                         href="/"
@@ -112,13 +112,13 @@ export default function Header({ visible = true }) {
                         
                         {/* Меню */}
                         <motion.div
-                            className="absolute top-[81px] left-0 right-0 bg-black/90 backdrop-blur-sm border-t border-white/20"
+                            className="absolute top-[61px] left-0 right-0 bg-black/90 backdrop-blur-sm"
                             initial={{ y: -20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: -20, opacity: 0 }}
                             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="flex flex-col py-6">
+                            <div className="flex flex-col py-1">
                                 {navigationItems.map((item, index) => (
                                     <motion.div
                                         key={item.href}

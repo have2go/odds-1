@@ -72,12 +72,11 @@ export default function ChainReactionSection() {
                         }}
                     >
                         <div className="flex">
-                            <div className="flex-1 pr-8 flex flex-col justify-center">
+                            <div className="flex-1 pr-8 flex flex-col">
                                 <p
-                                    className="font-sf-pro mb-0"
+                                    className="font-sf-pro mb-0 text-lg max-[1400px]:text-base"
                                     style={{
                                         fontWeight: "300",
-                                        fontSize: "24px",
                                         lineHeight: "130%",
                                         letterSpacing: "-1%",
                                         color: "#767676"
@@ -86,10 +85,9 @@ export default function ChainReactionSection() {
                                     A simplified mathematical model for the probability of a chain reaction:
                                 </p>
                                 <div 
-                                    className="font-sf-pro text-black"
+                                    className="font-sf-pro text-black m-auto text-4xl max-[1400px]:text-3xl max-xl:text-2xl max-md:text-base"
                                     style={{
                                         fontWeight: "400",
-                                        fontSize: "48px",
                                         lineHeight: "130%",
                                         letterSpacing: "-1%",
                                         fontFamily: 'SF Pro Display, monospace'
@@ -101,23 +99,23 @@ export default function ChainReactionSection() {
                             
                             <div className="w-[1px] bg-gray-400 mx-8"></div>
                             
-                            <div className="flex-1 pl-8">
+                            <div className="flex-1 pl-8 text-lg max-[1400px]:text-base font-light">
                                 <div className="space-y-3">
                                     <div className="flex items-start">
-                                        <span className="font-sf-pro text-gray-500 flex-shrink-0" style={{fontWeight: "300", fontSize: "24px", lineHeight: "130%", letterSpacing: "-1%", fontFamily: 'SF Pro Display'}}>λ</span>
-                                        <span className="font-sf-pro text-gray-700 ml-2" style={{fontWeight: "300", fontSize: "24px", lineHeight: "130%", letterSpacing: "-1%"}}>— constant depending on orbital object properties</span>
+                                        <span className="font-sf-pro text-gray-500 flex-shrink-0" >λ</span>
+                                        <span className="font-sf-pro text-gray-700 ml-2">— constant depending on orbital object properties</span>
                                     </div>
                                     <div className="flex items-start">
-                                        <span className="font-sf-pro text-gray-500 flex-shrink-0" style={{fontWeight: "300", fontSize: "24px", lineHeight: "130%", letterSpacing: "-1%", fontFamily: 'SF Pro Display'}}>t</span>
-                                        <span className="font-sf-pro text-gray-700 ml-2" style={{fontWeight: "300", fontSize: "24px", lineHeight: "130%", letterSpacing: "-1%"}}>— time period under consideration (years)</span>
+                                        <span className="font-sf-pro text-gray-500 flex-shrink-0">t</span>
+                                        <span className="font-sf-pro text-gray-700 ml-2">— time period under consideration (years)</span>
                                     </div>
                                     <div className="flex items-start">
-                                        <span className="font-sf-pro text-gray-500 flex-shrink-0" style={{fontWeight: "300", fontSize: "24px", lineHeight: "130%", letterSpacing: "-1%", fontFamily: 'SF Pro Display'}}>d</span>
-                                        <span className="font-sf-pro text-gray-700 ml-2" style={{fontWeight: "300", fontSize: "24px", lineHeight: "130%", letterSpacing: "-1%"}}>— orbital object density (objects/km³)</span>
+                                        <span className="font-sf-pro text-gray-500 flex-shrink-0">d</span>
+                                        <span className="font-sf-pro text-gray-700 ml-2">— orbital object density (objects/km³)</span>
                                     </div>
                                     <div className="flex items-start">
-                                        <span className="font-sf-pro text-gray-500 flex-shrink-0" style={{fontWeight: "300", fontSize: "24px", lineHeight: "130%", letterSpacing: "-1%", fontFamily: 'SF Pro Display'}}>v</span>
-                                        <span className="font-sf-pro text-gray-700 ml-2" style={{fontWeight: "300", fontSize: "24px", lineHeight: "130%", letterSpacing: "-1%"}}>— average relative velocity between objects (km/s)</span>
+                                        <span className="font-sf-pro text-gray-500 flex-shrink-0">v</span>
+                                        <span className="font-sf-pro text-gray-700 ml-2">— average relative velocity between objects (km/s)</span>
                                     </div>
                                 </div>
                             </div>
@@ -218,7 +216,7 @@ export default function ChainReactionSection() {
                                     className="font-sf-pro text-black text-center"
                                     style={{
                                         fontWeight: "400",
-                                        fontSize: "clamp(24px, 6vw, 36px)",
+                                        fontSize: "clamp(24px, 4vw, 36px)",
                                         lineHeight: "130%",
                                         letterSpacing: "-1%",
                                         fontFamily: 'SF Pro Display, monospace'

@@ -1,15 +1,12 @@
 'use client';
 
 import {useState, useEffect, useRef} from 'react';
-import Image from 'next/image';
 import {motion, AnimatePresence} from 'framer-motion';
 import {TypeAnimation} from 'react-type-animation';
-import TransitionLink from "./components/TransitionLink";
-import { Button } from "./components/ui/button";
+import TransitionLink from "@/app/components/TransitionLink";
+import { Button } from "@/app/components/ui/button";
 
 export default function Home() {
-    // Состояние для отслеживания завершения печатания текста
-    const [typingComplete, setTypingComplete] = useState(false);
     // Состояние для показа кнопок
     const [showButtons, setShowButtons] = useState(false);
     // Состояние для проверки, была ли анимация уже показана
@@ -24,7 +21,6 @@ export default function Home() {
         if (hasPlayedAnimation === 'true') {
             // Если анимация уже была показана, сразу показываем финальное состояние
             setAnimationPlayed(true);
-            setTypingComplete(true);
             setShowButtons(true);
         }
     }, []);
@@ -32,8 +28,7 @@ export default function Home() {
     // Обработчик завершения анимации печатания
     const handleTypingComplete = () => {
         console.log("Печатание завершено");
-        setTypingComplete(true);
-        
+
         // Сохраняем флаг в sessionStorage
         sessionStorage.setItem('homeAnimationPlayed', 'true');
 
@@ -72,7 +67,7 @@ export default function Home() {
             <div className="relative h-full">
                 
                 {/* Текст с эффектом печатания - центр второй четверти сверху */}
-                <div className="absolute inset-x-0 top-1/4 h-1/4 flex items-center justify-center z-10">
+                <div className="absolute inset-x-0 top-1/4 sm:h-1/4 h-auto flex items-center justify-center z-10">
                     <div className="w-full md:max-w-[1000px] mx-auto text-center px-5 md:px-4">
                         <h1
                             className="w-full mx-auto font-sf-pro gradient-text"
@@ -121,7 +116,7 @@ export default function Home() {
                 <AnimatePresence>
                     {showButtons && (
                         <motion.div
-                            className="absolute inset-x-0 top-3/4 sm:top-1/2 transform -translate-y-1/2 flex justify-center z-10 sm:pt-[100px]"
+                            className="absolute inset-x-0 top-[55%] flex justify-center z-10"
                             initial={{ opacity: 0, y: 60 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ 
