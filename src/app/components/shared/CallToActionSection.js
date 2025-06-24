@@ -9,7 +9,7 @@ export default function CallToActionSection() {
     return (
         <section className="relative overflow-hidden py-20 lg:py-[120px]" style={{background: '#FFFFFF0A'}}>
             {/* Контент */}
-            <div className="relative z-10 w-full max-w-[1680px] mx-auto px-5 lg:px-[125px]">
+            <div className="relative z-10 w-full max-w-[1800px] mx-auto px-5 lg:px-[125px]">
                 
                 {/* Десктопная версия - оригинальная горизонтальная компоновка */}
                 <div className="hidden lg:block">
