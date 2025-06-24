@@ -101,7 +101,7 @@ function DesktopFailureSection({whiteBarRefProp}) {
         <div className="relative z-10 flex">
             {/* Левая половина - изображения (sticky) */}
             <div className="flex-1 relative">
-                <div ref={stickyContainerRef} className="sticky top-[70%] -translate-y-1/2 px-8 flex justify-center">
+                <div ref={stickyContainerRef} className="sticky top-[68%] -translate-y-1/2 px-8 flex justify-center">
                     <div className="relative w-full max-w-[600px] h-[400px]">
                         {[1, 2, 3, 4].map((imageIndex) => (
                             <div

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export default function ApproachFirstStepSection() {
     return (
         <section className="py-20 lg:py-32 bg-black">
-            <div className="max-w-[1680px] mx-auto px-5 lg:px-8">
+            <div className="max-w-[1680px] mx-auto px-5 lg:px-[125px]">
                 <div className="max-w-4xl xl:max-w-4xl">
                     {/* Заголовок */}
                     <motion.div

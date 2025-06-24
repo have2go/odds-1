@@ -10,7 +10,7 @@ import NoRoomForErrorSection from './components/NoRoomForErrorSection';
 import ChainReactionSection from './components/ChainReactionSection';
 import CulturalReflectionsSection from './components/CulturalReflectionsSection';
 import QuestionsAnswersSection from './components/QuestionsAnswersSection';
-import CallToActionSection from '@/app/components/shared/CallToActionSection';
+import CallToActionSection from './components/CallToActionSection';
 import Footer from '@/app/components/shared/Footer';
 
 export default function ProblemPage() {
