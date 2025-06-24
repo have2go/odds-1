@@ -58,6 +58,27 @@ function DesktopFailureSection({whiteBarRefProp}) {
         return () => window.removeEventListener('scroll', handleScroll);
     });
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setShowImage(true);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (stickyContainerRef.current) {
+            observer.observe(stickyContainerRef.current);
+        }
+
+        return () => {
+            if (stickyContainerRef.current) {
+                observer.unobserve(stickyContainerRef.current);
+            }
+        };
+    }, []);
+
     const getItemOpacity = (itemRef) => {
         if (!itemRef.current || !whiteBarRefProp.current) return 1;
 
