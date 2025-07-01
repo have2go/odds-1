@@ -16,7 +16,7 @@ export default function Header({ visible = true }) {
         { href: "/problem", label: "Problem" },
         { href: "/ideas", label: "Known Ideas" },
         { href: "/approach", label: "Approach" },
-        { href: "/we-are-open", label: "We Are Open" }
+        { href: "/we-are-open", label: "Join us" }
     ];
 
     return (

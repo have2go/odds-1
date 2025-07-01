@@ -42,7 +42,7 @@ export default function Home() {
         { title: 'PROBLEM', href: '/problem' },
         { title: 'KNOWN IDEAS', href: '/ideas' },
         { title: 'OUR APPROACH', href: '/approach' },
-        { title: 'WE ARE OPEN', href: '/we-are-open' }
+        { title: 'JOIN US', href: '/we-are-open' }
     ];
 
     return (
