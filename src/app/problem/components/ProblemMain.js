@@ -42,7 +42,7 @@ export default function ProblemMain({ scrollY }) {
                         ease: [0.22, 1, 0.36, 1]
                     }}
                 >
-                    Chain reaction of colliding space debris is a a critical threat to our future in space
+                    Chain reaction of colliding space debris is a critical threat to our future in space
                 </motion.h1>
             </div>
 
