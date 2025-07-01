@@ -29,7 +29,7 @@ export default function SatellitesSection() {
                                 letterSpacing: "0%",
                             }}
                         >
-                            As we launch more satellites, we leave behind a growing trail of abandoned rockets, defunct satellites, and collision fragments
+                            As we launch more satellites, we leave behind a growing trail of abandoned rocket parts, defunct satellites, and collision fragments
                         </h2>
                     </motion.div>
                 </div>
@@ -56,7 +56,7 @@ export default function SatellitesSection() {
                             letterSpacing: "0%",
                         }}
                     >
-                        These objects, traveling at up to 28,000 km/h, create an increasingly hazardous orbital environment.
+                        These objects, traveling at up to 40,320 km/h, create an increasingly hazardous orbital environment.
                     </p>
                 </motion.div>
             </div>

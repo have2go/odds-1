@@ -61,33 +61,6 @@ export default function IdeasHeroSection({scrollY}) {
                                 fragmentation debris. However, with our innovative approach and cutting-edge technology, we
                                 believe a comprehensive solution is within reach.
                             </motion.p>
-
-                            {/* Кнопка */}
-                            <TransitionLink href="/approach" className="w-fit">
-                                <motion.button
-                                    className="bg-white/10 backdrop-blur-sm text-white font-sf-pro px-8 py-4 hover:bg-white hover:text-black transition-all duration-300 border border-white/20 hover:border-white"
-                                    style={{
-                                        fontWeight: 400,
-                                        fontSize: "clamp(14px, 1.2vw, 16px)",
-                                        lineHeight: "120%",
-                                        letterSpacing: "0%"
-                                    }}
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        duration: 0.5,
-                                        delay: 0.4,
-                                        ease: [0.22, 1, 0.36, 1]
-                                    }}
-                                    whileHover={{
-                                        scale: 1.02,
-                                        transition: {duration: 0.2}
-                                    }}
-                                    whileTap={{scale: 0.98}}
-                                >
-                                    OUR APPROACH
-                                </motion.button>
-                            </TransitionLink>
                         </div>
 
                         {/* Правая часть - вертикальный timeline - не сжимается */}
@@ -196,6 +169,35 @@ export default function IdeasHeroSection({scrollY}) {
                                         </motion.div>
                                     );
                                 })}
+                                {/* Кнопка */}
+                                <div className="flex justify-center w-full pt-24">
+                                    <TransitionLink href="/approach" className=" mx-auto">
+                                        <motion.button
+                                            className="bg-white/10 backdrop-blur-sm text-white font-sf-pro px-14 py-4 hover:bg-white hover:text-black transition-all duration-300 border border-white/20 hover:border-white"
+                                            style={{
+                                                fontWeight: 400,
+                                                fontSize: "clamp(14px, 1.2vw, 16px)",
+                                                lineHeight: "120%",
+                                                letterSpacing: "0%"
+                                            }}
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{
+                                                duration: 0.5,
+                                                delay: 0.4,
+                                                ease: [0.22, 1, 0.36, 1]
+                                            }}
+                                            whileHover={{
+                                                scale: 1.02,
+                                                transition: {duration: 0.2}
+                                            }}
+                                            whileTap={{scale: 0.98}}
+                                        >
+                                            OUR APPROACH
+                                        </motion.button>
+                                    </TransitionLink>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -248,33 +250,6 @@ export default function IdeasHeroSection({scrollY}) {
                             fragmentation debris. However, with our innovative approach and cutting-edge technology, we
                             believe a comprehensive solution is within reach.
                         </motion.p>
-
-                        {/* Кнопка */}
-                        <TransitionLink href="/approach" className="w-fit">
-                            <motion.button
-                                className="bg-white/10 backdrop-blur-sm text-white font-sf-pro px-8 py-4 hover:bg-white hover:text-black transition-all duration-300 border border-white/20 hover:border-white"
-                                style={{
-                                    fontWeight: 400,
-                                    fontSize: "clamp(14px, 1.2vw, 16px)",
-                                    lineHeight: "120%",
-                                    letterSpacing: "0%"
-                                }}
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{
-                                    duration: 0.5,
-                                    delay: 0.4,
-                                    ease: [0.22, 1, 0.36, 1]
-                                }}
-                                whileHover={{
-                                    scale: 1.02,
-                                    transition: {duration: 0.2}
-                                }}
-                                whileTap={{scale: 0.98}}
-                            >
-                                OUR APPROACH
-                            </motion.button>
-                        </TransitionLink>
                     </div>
 
                     {/* Timeline - с фиксированным позиционированием точек */}
@@ -382,6 +357,34 @@ export default function IdeasHeroSection({scrollY}) {
                                     </motion.div>
                                 );
                             })}
+                            <div className="flex justify-center w-full pt-40">
+                                <TransitionLink href="/approach" className=" mx-auto">
+                                    <motion.button
+                                        className="bg-white/10 backdrop-blur-sm text-white font-sf-pro px-20 py-4 hover:bg-white hover:text-black transition-all duration-300 border border-white/20 hover:border-white"
+                                        style={{
+                                            fontWeight: 400,
+                                            fontSize: "clamp(14px, 1.2vw, 16px)",
+                                            lineHeight: "120%",
+                                            letterSpacing: "0%"
+                                        }}
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{
+                                            duration: 0.5,
+                                            delay: 0.4,
+                                            ease: [0.22, 1, 0.36, 1]
+                                        }}
+                                        whileHover={{
+                                            scale: 1.02,
+                                            transition: {duration: 0.2}
+                                        }}
+                                        whileTap={{scale: 0.98}}
+                                    >
+                                        OUR APPROACH
+                                    </motion.button>
+                                </TransitionLink>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -552,6 +555,33 @@ export default function IdeasHeroSection({scrollY}) {
                                     </ArticleDialog>
                                 </motion.div>
                             ))}
+                            <div className="flex justify-center w-full pt-40">
+                                <TransitionLink href="/approach" className=" mx-auto">
+                                    <motion.button
+                                        className="bg-white/10 backdrop-blur-sm text-white font-sf-pro px-20 py-4 hover:bg-white hover:text-black transition-all duration-300 border border-white/20 hover:border-white"
+                                        style={{
+                                            fontWeight: 400,
+                                            fontSize: "clamp(14px, 1.2vw, 16px)",
+                                            lineHeight: "120%",
+                                            letterSpacing: "0%"
+                                        }}
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{
+                                            duration: 0.5,
+                                            delay: 0.4,
+                                            ease: [0.22, 1, 0.36, 1]
+                                        }}
+                                        whileHover={{
+                                            scale: 1.02,
+                                            transition: {duration: 0.2}
+                                        }}
+                                        whileTap={{scale: 0.98}}
+                                    >
+                                        OUR APPROACH
+                                    </motion.button>
+                                </TransitionLink>
+                            </div>
                         </div>
                     </div>
                 </div>

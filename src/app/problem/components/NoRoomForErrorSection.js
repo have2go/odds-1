@@ -65,7 +65,6 @@ function DesktopFailureSection({whiteBarRefProp}) {
                     setShowImage(true);
                 }
             },
-            { threshold: 0.1 }
         );
 
         if (stickyContainerRef.current) {
@@ -101,7 +100,7 @@ function DesktopFailureSection({whiteBarRefProp}) {
         <div className="relative z-10 flex">
             {/* Левая половина - изображения (sticky) */}
             <div className="flex-1 relative">
-                <div ref={stickyContainerRef} className="sticky top-[68%] -translate-y-1/2 px-8 flex justify-center">
+                <div ref={stickyContainerRef} className="sticky top-[63%] -translate-y-1/2 px-8 flex justify-center">
                     <div className="relative w-full max-w-[600px] h-[400px]">
                         {[1, 2, 3, 4].map((imageIndex) => (
                             <div
@@ -395,9 +394,7 @@ export default function NoRoomForErrorSection() {
                                         ease: [0.22, 1, 0.36, 1]
                                     }}
                                 >
-                                    Regardless of the exact probability of a full Kessler Syndrome – whether it's 1% or
-                                    90% –
-                                    humanity cannot afford this risk. The consequences would be catastrophic and
+                                    Regardless of the exact probability of full Kessler Syndrome humanity cannot afford this risk. The consequences would be catastrophic and
                                     effectively
                                     irreversible within our lifetime.
                                 </motion.p>
@@ -431,7 +428,6 @@ export default function NoRoomForErrorSection() {
                         </motion.div>
                     </div>
 
-                    {/* Скроллируемые пункты с изображениями - ПОЛНАЯ ОРИГИНАЛЬНАЯ ЛОГИКА */}
                     <DesktopFailureSection whiteBarRefProp={whiteBarRef}/>
                 </div>
 

@@ -2,10 +2,12 @@
 
 import {motion} from 'framer-motion';
 import {Button} from "../ui/button";
-import {Rocket} from "lucide-react";
 import TransitionLink from "@/app/components/TransitionLink";
+import {usePathname} from "next/navigation";
 
 export default function CallToActionSection() {
+    const pathname = usePathname();
+
     return (
         <section className="relative overflow-hidden py-20 lg:py-[120px]" style={{background: '#FFFFFF0A'}}>
             {/* Контент */}
@@ -36,57 +38,111 @@ export default function CallToActionSection() {
                     </motion.h2>
 
                     {/* Абзац и кнопка прибиты к правому краю */}
-                    <div className="flex justify-end">
-                        <div className="max-w-[405px]">
-                            <motion.p
-                                className="font-sf-pro text-gray-300 text-left mb-8"
-                                style={{
-                                    fontWeight: "300",
-                                    fontSize: "clamp(16px, 1.5vw, 20px)",
-                                    lineHeight: "140%",
-                                    letterSpacing: "0%",
-                                }}
-                                initial={{opacity: 0, y: 50}}
-                                whileInView={{opacity: 1, y: 0}}
-                                viewport={{once: true}}
-                                transition={{
-                                    duration: 1.2,
-                                    delay: 0.3,
-                                    ease: [0.22, 1, 0.36, 1]
-                                }}
-                            >
-                                Without coordinated efforts to prevent new debris creation and remove existing objects, we
-                                risk losing access to critical orbits, catastrophically impacting modern civilization.
-                            </motion.p>
-
-                            <motion.div
-                                initial={{opacity: 0, y: 20}}
-                                whileInView={{opacity: 1, y: 0}}
-                                viewport={{once: true}}
-                                transition={{
-                                    duration: 1,
-                                    delay: 0.6,
-                                    ease: [0.22, 1, 0.36, 1]
-                                }}
-                            >
-                                <TransitionLink href="/we-are-open" className="w-fit">
-                                    <Button
-                                        variant="gradient"
-                                        size="xl"
-                                        className="w-full font-sf-pro"
-                                        style={{
-                                            fontWeight: "400",
-                                            fontSize: "clamp(14px, 1.2vw, 18px)",
-                                            lineHeight: "120%",
-                                            letterSpacing: "0%",
-                                        }}
-                                    >
-                                        <Rocket className="mr-2 h-5 w-5"/>
-                                        JOIN THE MISSION
-                                    </Button>
-                                </TransitionLink>
-                            </motion.div>
-                        </div>
+                    <div className="flex justify-end gap-10 pt-10 w-full">
+                        {pathname !== "/problem" && <motion.div
+                            initial={{opacity: 0, y: 20}}
+                            whileInView={{opacity: 1, y: 0}}
+                            viewport={{once: true}}
+                            transition={{
+                                duration: 1,
+                                delay: 0.6,
+                                ease: [0.22, 1, 0.36, 1]
+                            }}
+                        >
+                            <TransitionLink href="/problem" className="w-fit">
+                                <Button
+                                    variant="gradient"
+                                    size="xl"
+                                    className="min-w-[300px] w-full font-sf-pro"
+                                    style={{
+                                        fontWeight: "400",
+                                        fontSize: "clamp(14px, 1.2vw, 18px)",
+                                        lineHeight: "120%",
+                                        letterSpacing: "0%",
+                                    }}
+                                >
+                                    PROBLEM
+                                </Button>
+                            </TransitionLink>
+                        </motion.div>}
+                        {pathname !== "/ideas" && <motion.div
+                            initial={{opacity: 0, y: 20}}
+                            whileInView={{opacity: 1, y: 0}}
+                            viewport={{once: true}}
+                            transition={{
+                                duration: 1,
+                                delay: 0.6,
+                                ease: [0.22, 1, 0.36, 1]
+                            }}
+                        >
+                            <TransitionLink href="/ideas" className="w-fit">
+                                <Button
+                                    variant="gradient"
+                                    size="xl"
+                                    className="min-w-[300px] w-full font-sf-pro"
+                                    style={{
+                                        fontWeight: "400",
+                                        fontSize: "clamp(14px, 1.2vw, 18px)",
+                                        lineHeight: "120%",
+                                        letterSpacing: "0%",
+                                    }}
+                                >
+                                    IDEAS
+                                </Button>
+                            </TransitionLink>
+                        </motion.div>}
+                        {pathname !== "/approach" && <motion.div
+                            initial={{opacity: 0, y: 20}}
+                            whileInView={{opacity: 1, y: 0}}
+                            viewport={{once: true}}
+                            transition={{
+                                duration: 1,
+                                delay: 0.6,
+                                ease: [0.22, 1, 0.36, 1]
+                            }}
+                        >
+                            <TransitionLink href="/approach" className="w-fit">
+                                <Button
+                                    variant="gradient"
+                                    size="xl"
+                                    className="min-w-[300px] w-full font-sf-pro"
+                                    style={{
+                                        fontWeight: "400",
+                                        fontSize: "clamp(14px, 1.2vw, 18px)",
+                                        lineHeight: "120%",
+                                        letterSpacing: "0%",
+                                    }}
+                                >
+                                    APPROACH
+                                </Button>
+                            </TransitionLink>
+                        </motion.div>}
+                        {pathname !== "/we-are-open" && <motion.div
+                            initial={{opacity: 0, y: 20}}
+                            whileInView={{opacity: 1, y: 0}}
+                            viewport={{once: true}}
+                            transition={{
+                                duration: 1,
+                                delay: 0.6,
+                                ease: [0.22, 1, 0.36, 1]
+                            }}
+                        >
+                            <TransitionLink href="/we-are-open" className="w-fit">
+                                <Button
+                                    variant="gradient"
+                                    size="xl"
+                                    className="min-w-[300px] w-full font-sf-pro"
+                                    style={{
+                                        fontWeight: "400",
+                                        fontSize: "clamp(14px, 1.2vw, 18px)",
+                                        lineHeight: "120%",
+                                        letterSpacing: "0%",
+                                    }}
+                                >
+                                    JOIN US
+                                </Button>
+                            </TransitionLink>
+                        </motion.div>}
                     </div>
                 </div>
 
@@ -115,56 +171,115 @@ export default function CallToActionSection() {
                             and visionaries to join our mission
                         </motion.h2>
 
-                        {/* Абзац */}
-                        <motion.p
-                            className="font-sf-pro text-gray-300"
-                            style={{
-                                fontWeight: "300",
-                                fontSize: "clamp(16px, 4vw, 20px)",
-                                lineHeight: "140%",
-                                letterSpacing: "0%",
-                            }}
-                            initial={{opacity: 0, y: 50}}
-                            whileInView={{opacity: 1, y: 0}}
-                            viewport={{once: true}}
-                            transition={{
-                                duration: 1.2,
-                                delay: 0.1,
-                                ease: [0.22, 1, 0.36, 1]
-                            }}
-                        >
-                            Without coordinated efforts to prevent new debris creation and remove existing objects, we
-                            risk losing access to critical orbits, catastrophically impacting modern civilization.
-                        </motion.p>
+                        <div className="flex flex-col gap-5 pt-5 w-full">
 
-                        {/* Кнопка */}
-                        <motion.div
-                            initial={{opacity: 0, y: 20}}
-                            whileInView={{opacity: 1, y: 0}}
-                            viewport={{once: true}}
-                            transition={{
-                                duration: 1,
-                                delay: 0.2,
-                                ease: [0.22, 1, 0.36, 1]
-                            }}
-                        >
-                            <TransitionLink href="/we-are-open" className="w-fit">
-                                <Button
-                                    variant="gradient"
-                                    size="xl"
-                                    className="w-full font-sf-pro"
-                                    style={{
-                                        fontWeight: "400",
-                                        fontSize: "clamp(16px, 4vw, 20px)",
-                                        lineHeight: "120%",
-                                        letterSpacing: "0%",
-                                    }}
-                                >
-                                    <Rocket className="mr-2 h-5 w-5"/>
-                                    JOIN THE MISSION
-                                </Button>
-                            </TransitionLink>
-                        </motion.div>
+                            {pathname !== "/problem" && <motion.div
+                                initial={{opacity: 0, y: 20}}
+                                whileInView={{opacity: 1, y: 0}}
+                                viewport={{once: true}}
+                                transition={{
+                                    duration: 1,
+                                    delay: 0.2,
+                                    ease: [0.22, 1, 0.36, 1]
+                                }}
+                            >
+                                <TransitionLink href="/problem" className="w-fit">
+                                    <Button
+                                        variant="gradient"
+                                        size="xl"
+                                        className="w-full font-sf-pro"
+                                        style={{
+                                            fontWeight: "400",
+                                            fontSize: "clamp(16px, 4vw, 20px)",
+                                            lineHeight: "120%",
+                                            letterSpacing: "0%",
+                                        }}
+                                    >
+                                        PROBLEM
+                                    </Button>
+                                </TransitionLink>
+                            </motion.div>}
+                            {pathname !== "/ideas" && <motion.div
+                                initial={{opacity: 0, y: 20}}
+                                whileInView={{opacity: 1, y: 0}}
+                                viewport={{once: true}}
+                                transition={{
+                                    duration: 1,
+                                    delay: 0.2,
+                                    ease: [0.22, 1, 0.36, 1]
+                                }}
+                            >
+                                <TransitionLink href="/ideas" className="w-fit">
+                                    <Button
+                                        variant="gradient"
+                                        size="xl"
+                                        className="w-full font-sf-pro"
+                                        style={{
+                                            fontWeight: "400",
+                                            fontSize: "clamp(16px, 4vw, 20px)",
+                                            lineHeight: "120%",
+                                            letterSpacing: "0%",
+                                        }}
+                                    >
+                                        IDEAS
+                                    </Button>
+                                </TransitionLink>
+                            </motion.div>}
+                            {pathname !== "/approach" &&<motion.div
+                                initial={{opacity: 0, y: 20}}
+                                whileInView={{opacity: 1, y: 0}}
+                                viewport={{once: true}}
+                                transition={{
+                                    duration: 1,
+                                    delay: 0.2,
+                                    ease: [0.22, 1, 0.36, 1]
+                                }}
+                            >
+                                <TransitionLink href="/approach" className="w-fit">
+                                    <Button
+                                        variant="gradient"
+                                        size="xl"
+                                        className="w-full font-sf-pro"
+                                        style={{
+                                            fontWeight: "400",
+                                            fontSize: "clamp(16px, 4vw, 20px)",
+                                            lineHeight: "120%",
+                                            letterSpacing: "0%",
+                                        }}
+                                    >
+                                        APPROACH
+                                    </Button>
+                                </TransitionLink>
+                            </motion.div>}
+                            {pathname !== "/we-are-open" && <motion.div
+                                initial={{opacity: 0, y: 20}}
+                                whileInView={{opacity: 1, y: 0}}
+                                viewport={{once: true}}
+                                transition={{
+                                    duration: 1,
+                                    delay: 0.2,
+                                    ease: [0.22, 1, 0.36, 1]
+                                }}
+                            >
+                                <TransitionLink href="/we-are-open" className="w-fit">
+                                    <Button
+                                        variant="gradient"
+                                        size="xl"
+                                        className="w-full font-sf-pro"
+                                        style={{
+                                            fontWeight: "400",
+                                            fontSize: "clamp(16px, 4vw, 20px)",
+                                            lineHeight: "120%",
+                                            letterSpacing: "0%",
+                                        }}
+                                    >
+                                        JOIN US
+                                    </Button>
+                                </TransitionLink>
+                            </motion.div>}
+                        </div>
+
+
                     </div>
                 </div>
             </div>
