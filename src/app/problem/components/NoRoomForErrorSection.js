@@ -5,51 +5,46 @@ import {motion} from 'framer-motion';
 import Image from 'next/image';
 import ImagePreloader from '@/app/components/ImagePreloader';
 
-// Компонент для десктопной sticky логики
-function DesktopFailureSection({whiteBarRefProp}) {
+// Компонент для скроллируемых пунктов
+function ScrollablePointsSection({whiteBarRefProp, activeImage, setActiveImage}) {
     const [, forceUpdate] = useState({});
-    const [activeImage, setActiveImage] = useState(1);
-    const [showImage, setShowImage] = useState(false);
-    const stickyContainerRef = useRef(null);
     const item1Ref = useRef(null);
     const item2Ref = useRef(null);
     const item3Ref = useRef(null);
     const item4Ref = useRef(null);
 
-    // Отслеживание скролла для opacity пунктов и смены изображений
+    // Отслеживание скролла для смены изображений
     useEffect(() => {
         const handleScroll = () => {
             forceUpdate({});
 
-            if (showImage) {
-                const viewportCenter = window.innerHeight / 2;
+            const viewportCenter = window.innerHeight / 2;
 
-                if (item1Ref.current) {
-                    const item1Rect = item1Ref.current.getBoundingClientRect();
-                    if (item1Rect.top <= viewportCenter && item1Rect.bottom >= viewportCenter) {
-                        setActiveImage(1);
-                    }
+            if (item1Ref.current) {
+                const item1Rect = item1Ref.current.getBoundingClientRect();
+                if (item1Rect.top <= viewportCenter && item1Rect.bottom >= viewportCenter) {
+                    setActiveImage(1);
                 }
+            }
 
-                if (item2Ref.current) {
-                    const item2Rect = item2Ref.current.getBoundingClientRect();
-                    if (item2Rect.top <= viewportCenter && item2Rect.bottom >= viewportCenter) {
-                        setActiveImage(2);
-                    }
+            if (item2Ref.current) {
+                const item2Rect = item2Ref.current.getBoundingClientRect();
+                if (item2Rect.top <= viewportCenter && item2Rect.bottom >= viewportCenter) {
+                    setActiveImage(2);
                 }
+            }
 
-                if (item3Ref.current) {
-                    const item3Rect = item3Ref.current.getBoundingClientRect();
-                    if (item3Rect.top <= viewportCenter && item3Rect.bottom >= viewportCenter) {
-                        setActiveImage(3);
-                    }
+            if (item3Ref.current) {
+                const item3Rect = item3Ref.current.getBoundingClientRect();
+                if (item3Rect.top <= viewportCenter && item3Rect.bottom >= viewportCenter) {
+                    setActiveImage(3);
                 }
+            }
 
-                if (item4Ref.current) {
-                    const item4Rect = item4Ref.current.getBoundingClientRect();
-                    if (item4Rect.top <= viewportCenter && item4Rect.bottom >= viewportCenter) {
-                        setActiveImage(4);
-                    }
+            if (item4Ref.current) {
+                const item4Rect = item4Ref.current.getBoundingClientRect();
+                if (item4Rect.top <= viewportCenter && item4Rect.bottom >= viewportCenter) {
+                    setActiveImage(4);
                 }
             }
         };
@@ -57,26 +52,6 @@ function DesktopFailureSection({whiteBarRefProp}) {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     });
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setShowImage(true);
-                }
-            },
-        );
-
-        if (stickyContainerRef.current) {
-            observer.observe(stickyContainerRef.current);
-        }
-
-        return () => {
-            if (stickyContainerRef.current) {
-                observer.unobserve(stickyContainerRef.current);
-            }
-        };
-    }, []);
 
     const getItemOpacity = (itemRef) => {
         if (!itemRef.current || !whiteBarRefProp.current) return 1;
@@ -97,35 +72,15 @@ function DesktopFailureSection({whiteBarRefProp}) {
     };
 
     return (
-        <div className="relative z-10 flex">
-            {/* Левая половина - изображения (sticky) */}
-            <div className="flex-1 relative">
-                <div ref={stickyContainerRef} className="sticky top-[63%] -translate-y-1/2 px-8 flex justify-center">
-                    <div className="relative w-full max-w-[600px] h-[400px]">
-                        {[1, 2, 3, 4].map((imageIndex) => (
-                            <div
-                                key={imageIndex}
-                                className="absolute inset-0 transition-opacity duration-300 ease-in-out"
-                                style={{
-                                    opacity: showImage && activeImage === imageIndex ? 1 : 0
-                                }}
-                            >
-                                <Image
-                                    src={`/images/failure-${imageIndex}.png`}
-                                    alt={`Failure consequence ${imageIndex}`}
-                                    fill
-                                    className="object-contain"
-                                    priority={imageIndex === 1}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
+        <div className="flex">
+            {/* Левая половина - пустое место (планета "висит" над ней из sticky секции) */}
+            <div className="flex-1">
+                {/* Здесь ничего нет - планета зафиксирована в sticky секции выше */}
             </div>
 
-            {/* Правая половина - пункты */}
-            <div className="flex-1">
-                <div className="h-[230px]"></div>
+            {/* Правая половина - скроллируемые пункты */}
+            <div className="flex-1 z-50">
+                <div className="h-[50px] min-h-[400px]"></div> {/* Небольшой отступ */}
 
                 {/* Пункт 01 */}
                 <div
@@ -302,7 +257,29 @@ function DesktopFailureSection({whiteBarRefProp}) {
 }
 
 export default function NoRoomForErrorSection() {
-    const whiteBarRef = useRef(null); // Добавляем ref для белой полоски
+    const whiteBarRef = useRef(null);
+    const stickyContainerRef = useRef(null);
+    const [activeImage, setActiveImage] = useState(1);
+    const [showImage, setShowImage] = useState(false);
+
+    // Проверяем видимость секции для показа планеты
+    useEffect(() => {
+        const handleScroll = () => {
+            if (stickyContainerRef.current) {
+                const containerRect = stickyContainerRef.current.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+
+                // Показываем планету когда скроллируемая секция видна
+                const shouldShow = containerRect.top < viewportHeight && containerRect.bottom > 0;
+                setShowImage(shouldShow);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        // Проверяем сразу
+        handleScroll();
+        return () => window.removeEventListener('scroll', handleScroll);
+    });
 
     const failureItems = [
         {
@@ -346,9 +323,9 @@ export default function NoRoomForErrorSection() {
 
             <div className="w-full max-w-[1680px] mx-auto">
 
-                {/* Десктопная версия - оригинальная sticky логика */}
+                {/* Десктопная версия */}
                 <div className="hidden lg:block">
-                    {/* Sticky верхняя часть */}
+                    {/* STICKY СЕКЦИЯ - зафиксированная верхняя часть + планета */}
                     <div className="sticky top-0 z-20 bg-black pt-[100px]">
                         {/* Заголовок и абзац */}
                         <div className="px-8 py-[80px] flex items-start space-x-16">
@@ -426,9 +403,50 @@ export default function NoRoomForErrorSection() {
                                 If the Kessler effect materializes, we stand to lose:
                             </p>
                         </motion.div>
+
+                        {/* Нижняя часть sticky секции с планетой */}
+                        <div className="flex h-[50vh]">
+                            {/* Левая половина - ПЛАНЕТА (зафиксированная как часть sticky) */}
+                            <div className="flex-1 flex items-center justify-center">
+                                <div
+                                    className="relative w-[400px] h-[400px] transition-opacity duration-300"
+                                    style={{
+                                        opacity: showImage ? 1 : 0
+                                    }}
+                                >
+                                    {[1, 2, 3, 4].map((imageIndex) => (
+                                        <div
+                                            key={imageIndex}
+                                            className="absolute inset-0 transition-opacity duration-300 ease-in-out"
+                                            style={{
+                                                opacity: activeImage === imageIndex ? 1 : 0
+                                            }}
+                                        >
+                                            <Image
+                                                src={`/images/failure-${imageIndex}.png`}
+                                                alt={`Failure consequence ${imageIndex}`}
+                                                fill
+                                                className="object-contain"
+                                                priority={imageIndex === 1}
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Правая половина - пустое место */}
+                            <div className="flex-1"></div>
+                        </div>
                     </div>
 
-                    <DesktopFailureSection whiteBarRefProp={whiteBarRef}/>
+                    {/* СКРОЛЛИРУЕМАЯ СЕКЦИЯ - только пункты */}
+                    <div ref={stickyContainerRef}>
+                        <ScrollablePointsSection
+                            whiteBarRefProp={whiteBarRef}
+                            activeImage={activeImage}
+                            setActiveImage={setActiveImage}
+                        />
+                    </div>
                 </div>
 
                 {/* Мобильная и планшетная версия */}
