@@ -5,16 +5,10 @@ import { motion } from 'framer-motion';
 export default function ApproachFirstStepSection() {
     const milestones = [
         {
-            id: 'launch',
-            image: '/images/falcon-9.png',
-            title: 'Falcon-9',
-            description: ''
-        },
-        {
             id: 'step1',
             image: '/images/step-1.png',
             title: 'Mission 1',
-            description: 'FROG identifies and approaches the target CubeSat debris simulator'
+            description: 'Big FROG identifies and approaches the target CubeSat debris simulator'
         },
         {
             id: 'step2',
@@ -178,7 +172,7 @@ export default function ApproachFirstStepSection() {
                                     className="flex flex-col items-center text-center flex-1"
                                 >
                                     {/* Изображение */}
-                                    <div className="w-48 h-48 lg:w-56 lg:h-56 mb-6 flex items-center justify-center">
+                                    <div className="w-48 h-48 mb-6 flex items-center justify-center">
                                         <img
                                             src={milestone.image}
                                             alt={milestone.title}
@@ -216,10 +210,10 @@ export default function ApproachFirstStepSection() {
                         </div>
                     </div>
 
-                    {/* Планшет версия - 2x3 сетка */}
+                    {/* Планшет версия - 2x2 сетка */}
                     <div className="hidden lg:block xl:hidden">
-                        <div className="grid grid-cols-3 gap-8">
-                            {milestones.slice(0, 3).map((milestone, index) => (
+                        <div className="grid grid-cols-2 gap-8 max-w-4xl mx-auto">
+                            {milestones.map((milestone, index) => (
                                 <motion.div
                                     key={milestone.id}
                                     initial={{ opacity: 0, y: 30 }}
@@ -232,52 +226,7 @@ export default function ApproachFirstStepSection() {
                                     }}
                                     className="flex flex-col items-center text-center"
                                 >
-                                    <div className="w-36 h-36 mb-6 flex items-center justify-center">
-                                        <img
-                                            src={milestone.image}
-                                            alt={milestone.title}
-                                            className="w-full h-full object-contain"
-                                        />
-                                    </div>
-                                    <h4
-                                        className="font-sf-pro text-white mb-3"
-                                        style={{
-                                            fontWeight: "400",
-                                            fontSize: "18px",
-                                            lineHeight: "120%",
-                                        }}
-                                    >
-                                        {milestone.title}
-                                    </h4>
-                                    {milestone.description && (
-                                        <p
-                                            className="font-sf-pro text-gray-300 text-sm"
-                                            style={{
-                                                fontWeight: "300",
-                                                lineHeight: "140%",
-                                            }}
-                                        >
-                                            {milestone.description}
-                                        </p>
-                                    )}
-                                </motion.div>
-                            ))}
-                        </div>
-                        <div className="grid grid-cols-2 gap-8 mt-8 max-w-2xl mx-auto">
-                            {milestones.slice(3).map((milestone, index) => (
-                                <motion.div
-                                    key={milestone.id}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ 
-                                        duration: 0.8,
-                                        delay: 0.2 * (index + 3),
-                                        ease: [0.22, 1, 0.36, 1] 
-                                    }}
-                                    className="flex flex-col items-center text-center"
-                                >
-                                    <div className="w-36 h-36 mb-6 flex items-center justify-center">
+                                    <div className="w-48 h-48 mb-6 flex items-center justify-center">
                                         <img
                                             src={milestone.image}
                                             alt={milestone.title}
@@ -326,7 +275,7 @@ export default function ApproachFirstStepSection() {
                                     }}
                                     className="flex flex-col items-center text-center"
                                 >
-                                    <div className="w-32 h-32 mb-4 flex items-center justify-center">
+                                    <div className="w-40 h-40 mb-4 flex items-center justify-center">
                                         <img
                                             src={milestone.image}
                                             alt={milestone.title}
@@ -374,7 +323,7 @@ export default function ApproachFirstStepSection() {
                                 }}
                                 className="flex flex-col items-center text-center"
                             >
-                                <div className="w-32 h-32 mb-6 flex items-center justify-center">
+                                <div className="w-40 h-40 mb-6 flex items-center justify-center">
                                     <img
                                         src={milestone.image}
                                         alt={milestone.title}

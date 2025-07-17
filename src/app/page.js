@@ -46,7 +46,7 @@ export default function Home() {
         
         // Логика выбора видео
         if (isMobile) {
-            return '/videos/output2-mobile.mp4';
+            return '/videos/output2-sd.mp4'; // Используем SD для мобильных вместо mobile
         } else if (effectiveType === '4g' || effectiveType === '5g') {
             return '/videos/output2-hd.mp4';
         } else {
