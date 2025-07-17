@@ -1,5 +1,22 @@
 export const articles = [
     {
+        year: "1993",
+        title: "Inter-Agency Space Debris Coordination Committee",
+        description: "An international forum for the coordination of activities related to the issues of man-made and natural debris in space.",
+        image: "/images/inter-agency.png",
+        dialogImage: "/images/inter-agency-dialog.png",
+        abstract: "An international forum for the coordination of activities related to the issues of man-made and natural debris in space.",
+        summary: "The Inter-Agency Space Debris Coordination Committee (IADC) was established in 1993 to coordinate international efforts in space debris research, mitigation, and policy development. The committee brings together space agencies from around the world to share information and develop common approaches to the growing problem of space debris.",
+        keyPoints: [
+            "Coordinates international space debris research and mitigation efforts",
+            "Develops guidelines and best practices for debris mitigation",
+            "Facilitates information sharing between space agencies worldwide"
+        ],
+        source: "IADC",
+        readTime: "4 min read",
+        articleUrl: "https://www.iadc-home.org/what_iadc"
+    },
+    {
         year: "2015",
         title: "RemoveDEBRIS Mission Overview",
         description: "An initiative aimed at demonstrating key technologies for active debris removal, including net capture and harpoon techniques.",

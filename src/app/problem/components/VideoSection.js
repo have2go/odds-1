@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import OptimizedVideo from '@/app/components/OptimizedVideo';
 
 export default function VideoSection() {
     return (
@@ -12,20 +13,14 @@ export default function VideoSection() {
                 <div className="hidden lg:block relative overflow-hidden h-screen">
                     {/* Фоновое видео - смещено на 30% влево */}
                     <div className="absolute inset-0 -left-[30%] w-full h-full">
-                        <video
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
+                        <OptimizedVideo
+                            videoBaseName="debris"
                             className="w-full h-full object-cover"
-                        >
-                            <source src="/videos/debris.mp4" type="video/mp4" />
-                            <div className="w-full h-full bg-gray-600 flex items-center justify-center">
-                                <span className="text-white font-sf-pro text-lg">
-                                    Video not supported
-                                </span>
-                            </div>
-                        </video>
+                            autoPlay={true}
+                            muted={true}
+                            loop={true}
+                            playsInline={true}
+                        />
 
                         {/* Градиентные фейды */}
                         <div className="absolute left-0 top-0 w-[20%] h-full bg-gradient-to-r from-black to-transparent"></div>
@@ -103,20 +98,14 @@ export default function VideoSection() {
                 <div className="lg:hidden">
                     {/* Видео блок */}
                     <div className="w-full aspect-video">
-                        <video
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
+                        <OptimizedVideo
+                            videoBaseName="debris"
                             className="w-full h-full object-cover"
-                        >
-                            <source src="/videos/debris.mp4" type="video/mp4" />
-                            <div className="w-full h-full bg-gray-600 flex items-center justify-center">
-                                <span className="text-white font-sf-pro text-sm">
-                                    Video not supported
-                                </span>
-                            </div>
-                        </video>
+                            autoPlay={true}
+                            muted={true}
+                            loop={true}
+                            playsInline={true}
+                        />
                     </div>
 
                     {/* Текстовый блок */}

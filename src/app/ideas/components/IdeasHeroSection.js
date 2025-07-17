@@ -90,8 +90,8 @@ export default function IdeasHeroSection({scrollY}) {
                                                 <div 
                                                     className={`relative cursor-pointer group ${
                                                         isLeft 
-                                                            ? 'mr-auto pr-8' 
-                                                            : 'ml-auto pl-8'
+                                                            ? 'mr-auto' 
+                                                            : 'ml-auto'
                                                     }`}
                                                     style={{
                                                         width: 'min(425px, calc(50% - 2rem))',
@@ -278,8 +278,8 @@ export default function IdeasHeroSection({scrollY}) {
                                             <div 
                                                 className={`relative cursor-pointer group ${
                                                     isLeft 
-                                                        ? 'mr-auto pr-8' 
-                                                        : 'ml-auto pl-8'
+                                                        ? 'mr-auto' 
+                                                        : 'ml-auto'
                                                 }`}
                                                 style={{
                                                     width: 'min(425px, calc(50% - 2rem))',
