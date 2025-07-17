@@ -14,6 +14,7 @@ export default function Home() {
     // Состояние для загрузки видео
     const [videoLoaded, setVideoLoaded] = useState(false);
     const [videoStarted, setVideoStarted] = useState(false);
+    const [videoTimedOut, setVideoTimedOut] = useState(false);
 
     const containerRef = useRef(null);
     const videoRef = useRef(null);
@@ -32,13 +33,57 @@ export default function Home() {
         initVideoLoading();
     }, []);
 
+    // Функция для выбора оптимального видео
+    const selectVideoSource = () => {
+        const isMobile = window.innerWidth < 768;
+        const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+        
+        // Проверяем Network Information API
+        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        const effectiveType = connection?.effectiveType;
+        
+        console.log(`Device: ${isMobile ? 'Mobile' : isTablet ? 'Tablet' : 'Desktop'}, Connection: ${effectiveType || 'unknown'}`);
+        
+        // Логика выбора видео
+        if (isMobile) {
+            return '/videos/output2-mobile.mp4';
+        } else if (effectiveType === '4g' || effectiveType === '5g') {
+            return '/videos/output2-hd.mp4';
+        } else {
+            return '/videos/output2-sd.mp4';
+        }
+    };
+
     // Функция для инициализации загрузки видео
     const initVideoLoading = () => {
         if (videoRef.current) {
             const video = videoRef.current;
             
+            // Выбираем оптимальное видео
+            const videoSrc = selectVideoSource();
+            console.log(`Selected video: ${videoSrc}`);
+            
+            // Устанавливаем источник
+            video.src = videoSrc;
+            
             // Устанавливаем preload="auto" для полной загрузки
             video.preload = 'auto';
+            
+            // Таймаут загрузки (30 секунд)
+            const timeoutId = setTimeout(() => {
+                if (!videoStarted) {
+                    console.log('Video loading timeout - staying with placeholder');
+                    setVideoTimedOut(true);
+                    
+                    // Очищаем обработчики
+                    video.removeEventListener('loadstart', handleLoadStart);
+                    video.removeEventListener('loadeddata', handleLoadedData);
+                    video.removeEventListener('canplaythrough', handleCanPlayThrough);
+                }
+            }, 30000);
+            
+            // Сохраняем ID таймаута для возможной очистки
+            video.timeoutId = timeoutId;
             
             // Добавляем обработчики
             video.addEventListener('loadstart', handleLoadStart);
@@ -101,6 +146,11 @@ export default function Home() {
                 if (percentLoaded >= 95 || force) {
                     console.log('Starting video playback');
                     setVideoStarted(true);
+                    
+                    // Очищаем таймаут
+                    if (video.timeoutId) {
+                        clearTimeout(video.timeoutId);
+                    }
                     
                     // Очищаем все обработчики
                     video.removeEventListener('loadstart', handleLoadStart);
@@ -185,7 +235,7 @@ export default function Home() {
                         videoLoaded ? 'opacity-100' : 'opacity-0'
                     }`}
                 >
-                    <source src="/videos/output2.mp4" type="video/mp4" />
+                    {/* Источники будут установлены динамически через JS */}
                 </video>
             </div>
 
