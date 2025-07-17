@@ -11,8 +11,12 @@ export default function Home() {
     const [showButtons, setShowButtons] = useState(false);
     // Состояние для проверки, была ли анимация уже показана
     const [animationPlayed, setAnimationPlayed] = useState(false);
+    // Состояние для загрузки видео
+    const [videoLoaded, setVideoLoaded] = useState(false);
+    const [videoStarted, setVideoStarted] = useState(false);
 
     const containerRef = useRef(null);
+    const videoRef = useRef(null);
 
     // Проверяем при загрузке компонента, была ли анимация уже показана
     useEffect(() => {
@@ -23,6 +27,112 @@ export default function Home() {
             setAnimationPlayed(true);
             setShowButtons(true);
         }
+
+        // Инициализируем lazy loading видео
+        initVideoLoading();
+    }, []);
+
+    // Функция для инициализации загрузки видео
+    const initVideoLoading = () => {
+        if (videoRef.current) {
+            const video = videoRef.current;
+            
+            // Устанавливаем preload="auto" для полной загрузки
+            video.preload = 'auto';
+            
+            // Добавляем обработчики
+            video.addEventListener('loadstart', handleLoadStart);
+            video.addEventListener('loadeddata', handleLoadedData);
+            video.addEventListener('canplaythrough', handleCanPlayThrough);
+            
+            // Начинаем загрузку видео
+            video.load();
+        }
+    };
+
+    // Обработчик начала загрузки
+    const handleLoadStart = () => {
+        console.log('Video loading started');
+    };
+
+    // Обработчик загрузки достаточных данных
+    const handleLoadedData = () => {
+        if (!videoStarted) {
+            console.log('Video data loaded - checking if fully cached');
+            
+            // Даем браузеру время на предзагрузку и проверяем через интервал
+            checkVideoFullyLoaded();
+        }
+    };
+
+    // Обработчик готовности к воспроизведению
+    const handleCanPlayThrough = () => {
+        if (!videoStarted) {
+            console.log('Video can play through - final check');
+            
+            // Дополнительная проверка через небольшую задержку
+            setTimeout(() => {
+                if (!videoStarted) {
+                    checkVideoFullyLoaded(true); // force = true для финального запуска
+                }
+            }, 1000);
+        }
+    };
+
+    // Функция проверки полной загрузки видео
+    const checkVideoFullyLoaded = (force = false) => {
+        if (videoRef.current && !videoStarted) {
+            const video = videoRef.current;
+            
+            if (video.buffered.length > 0 && video.duration) {
+                let totalBuffered = 0;
+                
+                // Суммируем все загруженные сегменты
+                for (let i = 0; i < video.buffered.length; i++) {
+                    totalBuffered += video.buffered.end(i) - video.buffered.start(i);
+                }
+                
+                const duration = video.duration;
+                const percentLoaded = (totalBuffered / duration) * 100;
+                
+                console.log(`Video buffered: ${percentLoaded.toFixed(1)}% (${video.buffered.length} segments)`);
+                
+                // Проверяем, загружено ли достаточно (95% или force)
+                if (percentLoaded >= 95 || force) {
+                    console.log('Starting video playback');
+                    setVideoStarted(true);
+                    
+                    // Очищаем все обработчики
+                    video.removeEventListener('loadstart', handleLoadStart);
+                    video.removeEventListener('loadeddata', handleLoadedData);
+                    video.removeEventListener('canplaythrough', handleCanPlayThrough);
+                    
+                    // Запускаем видео
+                    setTimeout(() => {
+                        setVideoLoaded(true);
+                        video.play().catch(console.error);
+                    }, 300);
+                    
+                    return;
+                }
+                
+                // Если не загружено достаточно, проверяем снова через 2 секунды
+                if (!force) {
+                    setTimeout(() => checkVideoFullyLoaded(), 2000);
+                }
+            }
+        }
+    };
+
+    // Очистка обработчиков при размонтировании
+    useEffect(() => {
+        return () => {
+            if (videoRef.current) {
+                videoRef.current.removeEventListener('loadstart', handleLoadStart);
+                videoRef.current.removeEventListener('loadeddata', handleLoadedData);
+                videoRef.current.removeEventListener('canplaythrough', handleCanPlayThrough);
+            }
+        };
     }, []);
 
     // Обработчик завершения анимации печатания
@@ -50,16 +160,32 @@ export default function Home() {
             ref={containerRef}
             className="fixed inset-0 bg-black text-white overflow-hidden h-screen"
         >
-            {/* Фоновое видео */}
+            {/* Фоновое видео с плейсхолдером */}
             <div className="absolute inset-0 z-0">
+                {/* Плейсхолдер - фоновое изображение */}
+                <div 
+                    className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${
+                        videoLoaded ? 'opacity-0' : 'opacity-100'
+                    }`}
+                    style={{
+                        backgroundImage: "url('/images/first_frame_bg_main.jpg')",
+                        // Fallback цвет на случай, если изображение не загрузится
+                        backgroundColor: '#000'
+                    }}
+                />
+                
+                {/* Видео */}
                 <video
-                    autoPlay
+                    ref={videoRef}
                     muted
                     loop
                     playsInline
-                    className="w-full h-full object-cover"
+                    preload="none"
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                        videoLoaded ? 'opacity-100' : 'opacity-0'
+                    }`}
                 >
-                    <source src="/videos/bg-main.mp4" type="video/mp4" />
+                    <source src="/videos/output2.mp4" type="video/mp4" />
                 </video>
             </div>
 
@@ -142,9 +268,8 @@ export default function Home() {
                                         >
                                             <TransitionLink href={button.href}>
                                                 <Button
-                                                    variant="ghost"
                                                     size="xl"
-                                                    className="w-full bg-white/10 backdrop-blur-sm text-white font-sf-pro hover:bg-white hover:text-black group whitespace-nowrap border-0"
+                                                    className="w-full border-[1.5px] border-white/70 backdrop-blur-xs text-white font-sf-pro hover:bg-white hover:text-black group whitespace-nowrap"
                                                     style={{
                                                         fontWeight: 400,
                                                         fontSize: "clamp(14px, 3.5vw, 22px)",
