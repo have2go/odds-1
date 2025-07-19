@@ -32,7 +32,7 @@ export default function ApproachFirstStepSection() {
 
     return (
         <section className="py-20 lg:py-32 bg-black">
-            <div className="max-w-[1680px] mx-auto px-5 lg:px-[125px]">
+            <div className="max-w-[1680px] mx-auto universal-section-padding">
                 <div className="max-w-4xl xl:max-w-4xl">
                     {/* Заголовок */}
                     <motion.div
@@ -48,7 +48,7 @@ export default function ApproachFirstStepSection() {
                             className="font-sf-pro gradient-text mb-8 lg:mb-16"
                             style={{
                                 fontWeight: "300",
-                                fontSize: "clamp(32px, 8vw, 64px)",
+                                fontSize: "clamp(40px, 5vw, 80px)",
                                 lineHeight: "110%",
                                 letterSpacing: "0%",
                             }}
@@ -73,7 +73,7 @@ export default function ApproachFirstStepSection() {
                                 className="font-sf-pro text-gray-300"
                                 style={{
                                     fontWeight: "300",
-                                    fontSize: "clamp(16px, 4vw, 24px)",
+                                    fontSize: "clamp(18px, 1.8vw, 24px)",
                                     lineHeight: "140%",
                                     letterSpacing: "0%",
                                 }}
@@ -96,7 +96,7 @@ export default function ApproachFirstStepSection() {
                                 className="font-sf-pro text-gray-300"
                                 style={{
                                     fontWeight: "300",
-                                    fontSize: "clamp(16px, 4vw, 24px)",
+                                    fontSize: "clamp(18px, 1.8vw, 24px)",
                                     lineHeight: "140%",
                                     letterSpacing: "0%",
                                 }}
@@ -119,7 +119,7 @@ export default function ApproachFirstStepSection() {
                                 className="font-sf-pro text-gray-300"
                                 style={{
                                     fontWeight: "300",
-                                    fontSize: "clamp(16px, 4vw, 24px)",
+                                    fontSize: "clamp(18px, 1.8vw, 24px)",
                                     lineHeight: "140%",
                                     letterSpacing: "0%",
                                 }}

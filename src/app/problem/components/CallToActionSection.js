@@ -11,7 +11,7 @@ export default function CallToActionSection() {
     return (
         <section className="relative overflow-hidden py-20 lg:py-[120px]" style={{background: '#FFFFFF0A'}}>
             {/* Контент */}
-            <div className="relative z-10 w-full max-w-[1680px] mx-auto px-5 lg:px-8">
+            <div className="relative z-10 w-full max-w-[1680px] mx-auto problem-section-padding">
 
                 {/* Десктопная версия - оригинальная горизонтальная компоновка */}
                 <div className="hidden lg:block">
@@ -20,7 +20,7 @@ export default function CallToActionSection() {
                         className="font-sf-pro gradient-text mb-16"
                         style={{
                             fontWeight: "300",
-                            fontSize: "clamp(40px, 6vw, 80px)",
+                            fontSize: "clamp(40px, 5vw, 80px)",
                             lineHeight: "110%",
                             letterSpacing: "0%",
                             paddingBottom: "0.05em"

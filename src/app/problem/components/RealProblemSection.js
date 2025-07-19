@@ -7,7 +7,7 @@ export default function RealProblemSection() {
     return (
         <section className="relative bg-black overflow-hidden pt-7 pb-24 lg:py-[120px] lg:pb-[240px]">
             {/* Десктопная версия - горизонтальная компоновка */}
-            <div className="hidden lg:block relative z-10 w-full max-w-[1680px] mx-auto px-8">
+            <div className="hidden lg:block relative z-10 w-full max-w-[1680px] mx-auto problem-section-padding">
                 <div className="flex items-start space-x-16">
                     {/* Левая половина - заголовок */}
                     <div className="flex-1">
@@ -15,7 +15,7 @@ export default function RealProblemSection() {
                             className="font-sf-pro gradient-text"
                             style={{
                                 fontWeight: "300",
-                                fontSize: "clamp(40px, 6vw, 80px)",
+                                fontSize: "clamp(40px, 5vw, 80px)",
                                 lineHeight: "96%",
                                 letterSpacing: "0%",
                             }}
@@ -47,7 +47,7 @@ export default function RealProblemSection() {
                                 className="font-sf-pro text-gray-300 mb-6"
                                 style={{
                                     fontWeight: "300",
-                                    fontSize: "clamp(18px, 2vw, 24px)",
+                                    fontSize: "clamp(18px, 1.8vw, 24px)",
                                     lineHeight: "140%",
                                     letterSpacing: "0%",
                                     maxWidth: "90%"
@@ -61,7 +61,7 @@ export default function RealProblemSection() {
                                 className="font-sf-pro text-gray-300"
                                 style={{
                                     fontWeight: "300",
-                                    fontSize: "clamp(18px, 2vw, 24px)",
+                                    fontSize: "clamp(18px, 1.8vw, 24px)",
                                     lineHeight: "140%",
                                     letterSpacing: "0%",
                                     maxWidth: "90%"

@@ -26,12 +26,12 @@ export default function ProblemMain({ scrollY }) {
             </div>
 
             {/* Контент */}
-            <div className="relative z-10 w-full max-w-[1680px] mx-auto px-5 lg:px-8 text-center">
+            <div className="relative z-10 w-full max-w-[1680px] mx-auto problem-section-padding text-center">
                 <motion.h1
-                    className="font-sf-pro gradient-text mb-8"
+                    className="font-sf-pro gradient-text mb-8 problem-main-title"
                     style={{
                         fontWeight: "300",
-                        fontSize: "clamp(40px, 10vw, 113px)",
+                        fontSize: "clamp(40px, 7vw, 113px)",
                         lineHeight: "96%",
                         letterSpacing: "0%",
                     }}

@@ -38,9 +38,9 @@ const AnimatedODDS = () => {
             variants={containerVariants}
         >
             <motion.h1
-                className="font-sf-pro text-center"
+                className="font-sf-pro text-center approach-hero-title"
                 style={{
-                    fontSize: "clamp(40px, 16vw, 140px)",
+                    fontSize: "clamp(40px, 10vw, 113px)",
                     fontWeight: 300,
                     lineHeight: "96%",
                     letterSpacing: "0%",
@@ -90,7 +90,7 @@ export default function ApproachHeroSection({ scrollY }) {
                     alt="Space background"
                     fill
                     priority
-                    className="object-cover scale-110"
+                    className=""
                 />
                 {/* Дополнительное затемнение для лучшей читаемости текста */}
                 <div className="absolute inset-0 bg-black/30" />

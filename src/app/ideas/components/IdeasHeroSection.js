@@ -11,7 +11,7 @@ export default function IdeasHeroSection({scrollY}) {
     return (
         <div className="bg-black text-white">
             {/* Main Section */}
-            <div className="max-w-[1800px] mx-auto px-5 lg:px-[125px] py-20 pb-0">
+            <div className="max-w-[1680px] mx-auto universal-section-padding py-20 pb-0">
                 
                 {/* Десктопная версия от 1280px - sticky позиционирование */}
                 <div className="hidden xl:block">
@@ -437,32 +437,7 @@ export default function IdeasHeroSection({scrollY}) {
                             believe a comprehensive solution is within reach.
                         </motion.p>
 
-                        {/* Кнопка */}
-                        <TransitionLink href="/approach" className="w-full">
-                            <motion.button
-                                className="bg-white/10 backdrop-blur-sm text-white font-sf-pro px-8 py-4 hover:bg-white hover:text-black transition-all duration-300 w-full border border-white/20 hover:border-white"
-                                style={{
-                                    fontWeight: 400,
-                                    fontSize: "clamp(14px, 4vw, 16px)",
-                                    lineHeight: "120%",
-                                    letterSpacing: "0%"
-                                }}
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{
-                                    duration: 0.5,
-                                    delay: 0.4,
-                                    ease: [0.22, 1, 0.36, 1]
-                                }}
-                                whileHover={{
-                                    scale: 1.02,
-                                    transition: {duration: 0.2}
-                                }}
-                                whileTap={{scale: 0.98}}
-                            >
-                                OUR APPROACH
-                            </motion.button>
-                        </TransitionLink>
+                        
                     </div>
 
                     {/* Timeline - слева, карточки справа */}

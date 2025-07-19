@@ -21,17 +21,17 @@ export default function ApproachOrbitSection() {
             className="relative text-white py-20 lg:py-[200px]"
             style={{ background: '#FFFFFF0A' }}
         >
-            <div className="relative z-10 max-w-[1800px] mx-auto px-5 lg:px-[125px]">
+            <div className="relative z-10 max-w-[1680px] mx-auto universal-section-padding">
                 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
                     
                     {/* Левая часть - sticky заголовок на десктопе, обычный на мобильном */}
                     <div className="relative">
-                        <div className="lg:sticky lg:top-[220px]">
+                        <div className="lg:sticky lg:top-[120px]">
                             <h2
                                 className="font-sf-pro gradient-text"
                                 style={{
-                                    fontSize: "clamp(32px, 8vw, 70px)",
+                                    fontSize: "clamp(40px, 5vw, 80px)",
                                     fontWeight: 300,
                                     lineHeight: "110%",
                                     letterSpacing: "-0.02em",
@@ -51,7 +51,7 @@ export default function ApproachOrbitSection() {
                             ref={descriptionRef}
                             className="text-white/80 font-sf-pro leading-relaxed"
                             style={{
-                                fontSize: "clamp(16px, 4vw, 18px)",
+                                fontSize: "clamp(18px, 1.8vw, 24px)",
                                 fontWeight: 300,
                                 lineHeight: "1.6"
                             }}
@@ -117,7 +117,7 @@ export default function ApproachOrbitSection() {
                                         style={{
                                             fontFamily: 'SF Pro Display',
                                             fontWeight: 300,
-                                            fontSize: 'clamp(16px, 4vw, 20px)',
+                                            fontSize: 'clamp(18px, 1.8vw, 24px)',
                                             lineHeight: '130%',
                                             letterSpacing: '-1%'
                                         }}
@@ -182,7 +182,7 @@ export default function ApproachOrbitSection() {
                                             style={{
                                                 fontFamily: 'SF Pro Display',
                                                 fontWeight: 300,
-                                                fontSize: 'clamp(16px, 4vw, 20px)',
+                                                fontSize: 'clamp(18px, 1.8vw, 24px)',
                                                 lineHeight: '130%',
                                                 letterSpacing: '-1%'
                                             }}
@@ -198,7 +198,7 @@ export default function ApproachOrbitSection() {
                                             style={{
                                                 fontFamily: 'SF Pro Display',
                                                 fontWeight: 300,
-                                                fontSize: 'clamp(16px, 4vw, 20px)',
+                                                fontSize: 'clamp(18px, 1.8vw, 24px)',
                                                 lineHeight: '130%',
                                                 letterSpacing: '-1%'
                                             }}

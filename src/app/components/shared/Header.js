@@ -33,7 +33,7 @@ export default function Header({ visible = true }) {
                     ease: [0.22, 1, 0.36, 1]
                 }}
             >
-                <div className="max-w-[1680px] mx-auto flex justify-between items-center h-[60px] md:h-[80px] px-5 md:px-8">
+                <div className="max-w-[1680px] mx-auto flex justify-between items-center h-[60px] md:h-[80px] universal-section-padding">
                     {/* Логотип */}
                     <TransitionLink
                         href="/"

@@ -85,7 +85,7 @@ function ScrollablePointsSection({whiteBarRefProp, activeImage, setActiveImage})
                 {/* Пункт 01 */}
                 <div
                     ref={item1Ref}
-                    className="mb-[175px] px-8"
+                    className="mb-[175px] pr-8"
                     style={{opacity: getItemOpacity(item1Ref)}}
                 >
                     <motion.div
@@ -127,7 +127,7 @@ function ScrollablePointsSection({whiteBarRefProp, activeImage, setActiveImage})
                 {/* Пункт 02 */}
                 <div
                     ref={item2Ref}
-                    className="mb-[175px] px-8"
+                    className="mb-[175px] pr-8"
                     style={{opacity: getItemOpacity(item2Ref)}}
                 >
                     <motion.div
@@ -169,7 +169,7 @@ function ScrollablePointsSection({whiteBarRefProp, activeImage, setActiveImage})
                 {/* Пункт 03 */}
                 <div
                     ref={item3Ref}
-                    className="mb-[175px] px-8"
+                    className="mb-[175px] pr-8"
                     style={{opacity: getItemOpacity(item3Ref)}}
                 >
                     <motion.div
@@ -326,16 +326,16 @@ export default function NoRoomForErrorSection() {
                 {/* Десктопная версия */}
                 <div className="hidden lg:block">
                     {/* STICKY СЕКЦИЯ - зафиксированная верхняя часть + планета */}
-                    <div className="sticky top-0 z-20 bg-black pt-[100px]">
+                    <div className="sticky top-0 z-20 bg-black pt-[100px] min-h-screen flex flex-col">
                         {/* Заголовок и абзац */}
-                        <div className="px-8 py-[80px] flex items-start space-x-16">
+                        <div className="problem-section-padding pt-5 pb-10 max-[1400px]:pt-0 max-[1400px]:pb-5 flex items-start space-x-16">
                             {/* Левая половина - заголовок */}
                             <div className="flex-1">
                                 <motion.h2
                                     className="font-sf-pro gradient-text"
                                     style={{
                                         fontWeight: "300",
-                                        fontSize: "clamp(40px, 6vw, 80px)",
+                                        fontSize: "clamp(40px, 5vw, 80px)",
                                         lineHeight: "96%",
                                         letterSpacing: "0%",
                                     }}
@@ -357,7 +357,7 @@ export default function NoRoomForErrorSection() {
                                     className="font-sf-pro text-gray-300"
                                     style={{
                                         fontWeight: "300",
-                                        fontSize: "26px",
+                                        fontSize: "clamp(18px, 1.8vw, 24px)",
                                         lineHeight: "130%",
                                         letterSpacing: "-1%",
                                         maxWidth: "90%"
@@ -381,7 +381,7 @@ export default function NoRoomForErrorSection() {
                         {/* Белая полоска */}
                         <motion.div
                             ref={whiteBarRef}
-                            className="bg-gray-200 py-[11px] px-[30px]"
+                            className="bg-gray-200 py-[11px] problem-section-padding"
                             initial={{opacity: 0, y: 20}}
                             whileInView={{opacity: 1, y: 0}}
                             viewport={{once: true}}
@@ -395,7 +395,7 @@ export default function NoRoomForErrorSection() {
                                 className="font-sf-pro text-black text-left"
                                 style={{
                                     fontWeight: "600",
-                                    fontSize: "26px",
+                                    fontSize: "clamp(18px, 1.8vw, 24px)",
                                     lineHeight: "130%",
                                     letterSpacing: "-1%",
                                 }}
@@ -405,11 +405,11 @@ export default function NoRoomForErrorSection() {
                         </motion.div>
 
                         {/* Нижняя часть sticky секции с планетой */}
-                        <div className="flex h-[50vh]">
+                        <div className="flex flex-1">
                             {/* Левая половина - ПЛАНЕТА (зафиксированная как часть sticky) */}
                             <div className="flex-1 flex items-center justify-center">
                                 <div
-                                    className="relative w-[400px] h-[400px] transition-opacity duration-300"
+                                    className="relative w-[400px] h-[400px] max-[1400px]:w-[350px] max-[1400px]:h-[350px] transition-opacity duration-300"
                                     style={{
                                         opacity: showImage ? 1 : 0
                                     }}

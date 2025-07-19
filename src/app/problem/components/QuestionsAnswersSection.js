@@ -76,17 +76,17 @@ export default function QuestionsAnswersSection() {
 
     return (
         <section className="relative bg-black py-20 lg:py-0">
-            <div className="w-full max-w-[1680px] mx-auto px-5 lg:px-8">
+            <div className="w-full max-w-[1680px] mx-auto problem-section-padding">
                 
                 {/* Десктопная версия - оригинальная sticky логика */}
                 <div className="hidden lg:grid lg:grid-cols-2 lg:gap-16">
                     {/* Левая колонка - Sticky заголовок */}
-                    <div className="sticky top-[120px] h-fit pt-[100px] pb-[220px]">
+                    <div className="sticky top-[20px] h-fit pt-[100px] pb-[220px]">
                         <motion.h2
                             className="font-sf-pro gradient-text"
                             style={{
                                 fontWeight: "300",
-                                fontSize: "clamp(40px, 6vw, 80px)",
+                                fontSize: "clamp(40px, 5vw, 80px)",
                                 lineHeight: "96%",
                                 letterSpacing: "0%",
                             }}
@@ -126,7 +126,7 @@ export default function QuestionsAnswersSection() {
                                         {category.items.map((item, itemIndex) => (
                                             <div key={item.id} className="border-b last:border-b-0" style={{borderColor: '#FFFFFF33'}}>
                                                 <button onClick={() => toggleItem(item.id)} className="w-full py-[30px] px-0 flex justify-between items-center text-left cursor-pointer">
-                                                    <span className="font-sf-pro text-white pr-4" style={{fontWeight: "400", fontSize: "24px", lineHeight: "96%", letterSpacing: "0%"}}>
+                                                    <span className="font-sf-pro text-white pr-4" style={{fontWeight: "400", fontSize: "clamp(18px, 1.8vw, 24px)", lineHeight: "96%", letterSpacing: "0%"}}>
                                                         {item.question}
                                                     </span>
                                                     <motion.div animate={{rotate: openItem === item.id ? 45 : 0}} transition={{duration: 0.3, ease: [0.22, 1, 0.36, 1]}} className="flex-shrink-0 flex items-center justify-center" style={{width: '43px', height: '43px'}}>
@@ -140,7 +140,7 @@ export default function QuestionsAnswersSection() {
                                                     {openItem === item.id && (
                                                         <motion.div initial={{height: 0, opacity: 0}} animate={{height: 'auto', opacity: 1}} exit={{height: 0, opacity: 0}} transition={{duration: 0.4, ease: [0.22, 1, 0.36, 1]}} className="overflow-hidden">
                                                             <div className="pb-[30px] pr-[50px]">
-                                                                <p className="font-sf-pro text-gray-300" style={{fontWeight: "300", fontSize: "24px", lineHeight: "130%", letterSpacing: "-1%"}}>
+                                                                <p className="font-sf-pro text-gray-300" style={{fontWeight: "300", fontSize: "clamp(18px, 1.8vw, 24px)", lineHeight: "130%", letterSpacing: "-1%"}}>
                                                                     {item.answer}
                                                                 </p>
                                                             </div>

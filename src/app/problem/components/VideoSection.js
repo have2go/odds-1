@@ -10,7 +10,7 @@ export default function VideoSection() {
             <div className="w-full max-w-[1680px] mx-auto">
 
                 {/* Десктоп версия - видео фон с текстом справа */}
-                <div className="hidden lg:block relative overflow-hidden h-screen">
+                <div className="hidden lg:block relative overflow-hidden min-h-screen">
                     {/* Фоновое видео - смещено на 30% влево */}
                     <div className="absolute inset-0 -left-[30%] w-full h-full">
                         <OptimizedVideo
@@ -30,7 +30,7 @@ export default function VideoSection() {
                     </div>
 
                     {/* Контент поверх видео */}
-                    <div className="relative z-10 px-8 flex items-center h-full">
+                    <div className="relative z-10 problem-section-padding flex items-center h-full">
                         <div className="flex-1"></div>
                         <div className="flex-1 flex flex-col justify-center space-y-8">
                         <motion.div
@@ -46,7 +46,7 @@ export default function VideoSection() {
                                 className="font-sf-pro gradient-text mb-8"
                                 style={{
                                     fontWeight: "300",
-                                    fontSize: "56px",
+                                    fontSize: "clamp(32px, 4vw, 64px)",
                                     lineHeight: "96%",
                                     letterSpacing: "0%",
                                 }}
@@ -58,7 +58,7 @@ export default function VideoSection() {
                                 className="font-sf-pro text-gray-300 mb-6"
                                 style={{
                                     fontWeight: "300",
-                                    fontSize: "26px",
+                                    fontSize: "clamp(18px, 1.8vw, 24px)",
                                     lineHeight: "130%",
                                     letterSpacing: "-1%",
                                 }}
@@ -70,7 +70,7 @@ export default function VideoSection() {
                                 className="font-sf-pro text-gray-300 mb-6"
                                 style={{
                                     fontWeight: "300",
-                                    fontSize: "26px",
+                                    fontSize: "clamp(18px, 1.8vw, 24px)",
                                     lineHeight: "130%",
                                     letterSpacing: "-1%",
                                 }}
@@ -82,7 +82,7 @@ export default function VideoSection() {
                                 className="font-sf-pro text-gray-300"
                                 style={{
                                     fontWeight: "300",
-                                    fontSize: "26px",
+                                    fontSize: "clamp(18px, 1.8vw, 24px)",
                                     lineHeight: "130%",
                                     letterSpacing: "-1%",
                                 }}

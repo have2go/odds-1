@@ -84,7 +84,7 @@ export default function ApproachExplanationSection() {
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent via-gray-900/10 to-transparent"></div>
             </div>
 
-            <div className="relative z-10 max-w-[1800px] mx-auto px-5 lg:px-[125px] w-full">
+            <div className="relative z-10 max-w-[1680px] mx-auto universal-section-padding w-full">
                 
                 {/* Версия до 1600px - вертикальная */}
                 <div className="xl:hidden">
@@ -137,7 +137,7 @@ export default function ApproachExplanationSection() {
                             <p 
                                 className="text-white/80 font-sf-pro leading-relaxed"
                                 style={{
-                                    fontSize: "clamp(16px, 4vw, 20px)",
+                                    fontSize: "clamp(18px, 1.8vw, 24px)",
                                     fontWeight: 300,
                                     lineHeight: "1.6"
                                 }}
@@ -197,7 +197,7 @@ export default function ApproachExplanationSection() {
                                 <p 
                                     className="text-white/80 font-sf-pro leading-relaxed"
                                     style={{
-                                        fontSize: "clamp(16px, 2.5vw, 20px)",
+                                        fontSize: "clamp(18px, 1.8vw, 24px)",
                                         fontWeight: 300,
                                         lineHeight: "1.6"
                                     }}

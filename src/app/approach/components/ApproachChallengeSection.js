@@ -90,7 +90,7 @@ export default function ApproachChallengeSection() {
                     className="sticky top-0 bg-black text-white overflow-hidden relative"
                     style={{height: "calc(100vh - 80px)"}}
                 >
-                    <div className="relative z-10 max-w-[1800px] mx-auto px-[125px] h-full">
+                    <div className="relative z-10 max-w-[1680px] mx-auto universal-section-padding h-full">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 h-full">
 
                             {/* Левая часть - заголовок */}
@@ -102,7 +102,7 @@ export default function ApproachChallengeSection() {
                                     <h2
                                         className="font-sf-pro gradient-text"
                                         style={{
-                                            fontSize: "clamp(40px, 6vw, 80px)",
+                                            fontSize: "clamp(40px, 5vw, 80px)",
                                             fontWeight: 300,
                                             lineHeight: "110%",
                                             letterSpacing: "0%",
@@ -150,7 +150,7 @@ export default function ApproachChallengeSection() {
                                                 style={{
                                                     fontFamily: "SF Pro Display",
                                                     fontWeight: 300,
-                                                    fontSize: "26px",
+                                                    fontSize: "clamp(18px, 1.8vw, 24px)",
                                                     lineHeight: "130%",
                                                     letterSpacing: "-1%"
                                                 }}
@@ -188,7 +188,7 @@ export default function ApproachChallengeSection() {
                                                 style={{
                                                     fontFamily: "SF Pro Display",
                                                     fontWeight: 300,
-                                                    fontSize: "26px",
+                                                    fontSize: "clamp(18px, 1.8vw, 24px)",
                                                     lineHeight: "130%",
                                                     letterSpacing: "-1%"
                                                 }}
@@ -226,7 +226,7 @@ export default function ApproachChallengeSection() {
                                                 style={{
                                                     fontFamily: "SF Pro Display",
                                                     fontWeight: 300,
-                                                    fontSize: "26px",
+                                                    fontSize: "clamp(18px, 1.8vw, 24px)",
                                                     lineHeight: "130%",
                                                     letterSpacing: "-1%"
                                                 }}
@@ -264,7 +264,7 @@ export default function ApproachChallengeSection() {
                                                 style={{
                                                     fontFamily: "SF Pro Display",
                                                     fontWeight: 300,
-                                                    fontSize: "26px",
+                                                    fontSize: "clamp(18px, 1.8vw, 24px)",
                                                     lineHeight: "130%",
                                                     letterSpacing: "-1%"
                                                 }}
@@ -281,7 +281,7 @@ export default function ApproachChallengeSection() {
                                                             style={{
                                                                 fontFamily: "SF Pro Display",
                                                                 fontWeight: 300,
-                                                                fontSize: "22px",
+                                                                fontSize: "clamp(18px, 1.8vw, 24px)",
                                                                 lineHeight: "130%",
                                                                 letterSpacing: "-1%"
                                                             }}

@@ -214,7 +214,7 @@ export default function Home() {
             <div className="absolute inset-0 z-0">
                 {/* Плейсхолдер - фоновое изображение */}
                 <div 
-                    className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${
+                    className={`absolute inset-0 bg-cover bg-center bg-no-repeat ${
                         videoLoaded ? 'opacity-0' : 'opacity-100'
                     }`}
                     style={{
@@ -231,7 +231,7 @@ export default function Home() {
                     loop
                     playsInline
                     preload="none"
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                    className={`absolute inset-0 w-full h-full object-cover ${
                         videoLoaded ? 'opacity-100' : 'opacity-0'
                     }`}
                 >

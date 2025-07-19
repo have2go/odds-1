@@ -9,7 +9,7 @@ export default function ChainReactionSection() {
             style={{ backgroundColor: '#FFFFFF0A' }}
         >
             {/* Контент */}
-            <div className="relative z-10 w-full max-w-[1680px] mx-auto px-5 lg:px-8">
+            <div className="relative z-10 w-full max-w-[1680px] mx-auto problem-section-padding">
                 
                 {/* Десктопная версия - оригинальная горизонтальная компоновка */}
                 <div className="hidden lg:block">
@@ -20,7 +20,7 @@ export default function ChainReactionSection() {
                                 className="font-sf-pro gradient-text"
                                 style={{
                                     fontWeight: "300",
-                                    fontSize: "clamp(40px, 6vw, 80px)",
+                                    fontSize: "clamp(40px, 5vw, 80px)",
                                     lineHeight: "96%",
                                     letterSpacing: "0%",
                                 }}
@@ -41,7 +41,7 @@ export default function ChainReactionSection() {
                                 className="font-sf-pro text-gray-300 max-w-[405px]"
                                 style={{
                                     fontWeight: "300",
-                                    fontSize: "24px",
+                                    fontSize: "clamp(18px, 1.8vw, 24px)",
                                     lineHeight: "130%",
                                     letterSpacing: "-1%",
                                 }}
@@ -127,12 +127,12 @@ export default function ChainReactionSection() {
                         <div className="flex-1"></div>
                         <div className="flex-1 flex space-x-8">
                             <motion.div className="flex-1" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1.2, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}>
-                                <p className="font-sf-pro text-gray-300 max-w-[405px]" style={{fontWeight: "300", fontSize: "24px", lineHeight: "130%", letterSpacing: "-1%"}}>
+                                <p className="font-sf-pro text-gray-300 max-w-[405px]" style={{fontWeight: "300", fontSize: "clamp(18px, 1.8vw, 24px)", lineHeight: "130%", letterSpacing: "-1%"}}>
                                     With existing density at 800 km altitude and average relative velocity of 10 km/s, the probability of cascading collisions beginning within the next 20 years is estimated at 45-60%.
                                 </p>
                             </motion.div>
                             <motion.div className="flex-1" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1.2, delay: 1, ease: [0.22, 1, 0.36, 1] }}>
-                                <p className="font-sf-pro text-gray-300 max-w-[405px]" style={{fontWeight: "300", fontSize: "24px", lineHeight: "130%", letterSpacing: "-1%"}}>
+                                <p className="font-sf-pro text-gray-300 max-w-[405px]" style={{fontWeight: "300", fontSize: "clamp(18px, 1.8vw, 24px)", lineHeight: "130%", letterSpacing: "-1%"}}>
                                     Research indicates that even if we immediately ceased all space launches, the existing debris population in certain regions could trigger the Kessler effect within decades.
                                 </p>
                             </motion.div>

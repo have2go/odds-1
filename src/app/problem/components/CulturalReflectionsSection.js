@@ -8,17 +8,17 @@ import { ExternalLink } from "lucide-react";
 export default function CulturalReflectionsSection() {
     return (
         <section className="relative bg-black py-20 lg:py-0">
-            <div className="w-full max-w-[1680px] mx-auto px-5 lg:px-8">
+            <div className="w-full max-w-[1680px] mx-auto problem-section-padding">
                 
                 {/* Десктопная версия - оригинальная sticky логика */}
                 <div className="hidden lg:grid lg:grid-cols-2 lg:gap-16">
                     {/* Левая колонка - Sticky заголовок */}
-                    <div className="sticky top-[120px] h-fit pt-[100px] pb-[220px]">
+                    <div className="sticky top-[20px] h-fit pt-[100px] pb-[220px]">
                         <motion.h2
                             className="font-sf-pro gradient-text"
                             style={{
                                 fontWeight: "300",
-                                fontSize: "clamp(40px, 6vw, 80px)",
+                                fontSize: "clamp(40px, 5vw, 80px)",
                                 lineHeight: "96%",
                                 letterSpacing: "0%",
                             }}
@@ -52,7 +52,7 @@ export default function CulturalReflectionsSection() {
                                     <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
                                     <CardContent className="absolute bottom-0 left-0 right-0 p-10">
                                         <h3 className="font-sf-pro text-white mb-5" style={{fontWeight: "300", fontSize: "48px", lineHeight: "96%", letterSpacing: "0%"}}>Gravity (2013)</h3>
-                                        <p className="font-sf-pro mb-0" style={{fontWeight: "300", fontSize: "24px", lineHeight: "130%", letterSpacing: "-1%", color: "#FFFFFFCC"}}>
+                                        <p className="font-sf-pro mb-0" style={{fontWeight: "300", fontSize: "clamp(18px, 1.8vw, 24px)", lineHeight: "130%", letterSpacing: "-1%", color: "#FFFFFFCC"}}>
                                             This award-winning film vividly portrays the catastrophic consequences of the Kessler Syndrome, depicting a scenario where satellite destruction triggers a chain reaction of collisions.
                                         </p>
                                     </CardContent>
@@ -76,10 +76,10 @@ export default function CulturalReflectionsSection() {
                                     <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
                                     <CardContent className="absolute bottom-0 left-0 right-0 p-10">
                                         <h3 className="font-sf-pro text-white mb-5" style={{fontWeight: "300", fontSize: "48px", lineHeight: "96%", letterSpacing: "0%"}}>Nikolai Gorkavyi</h3>
-                                        <p className="font-sf-pro mb-2" style={{fontWeight: "300", fontSize: "24px", lineHeight: "130%", letterSpacing: "-1%", color: "#FFFFFFCC"}}>
+                                        <p className="font-sf-pro mb-2" style={{fontWeight: "300", fontSize: "clamp(18px, 1.8vw, 24px)", lineHeight: "130%", letterSpacing: "-1%", color: "#FFFFFFCC"}}>
                                             This astrophysicist and science fiction writer explores space debris removal in his works, particularly in the "Astrovitianka" cycle.
                                         </p>
-                                        <a href="#" className="font-sf-pro underline inline-flex items-center group" style={{fontWeight: "300", fontSize: "24px", lineHeight: "130%", letterSpacing: "-1%", color: "#FFFFFFCC"}}>
+                                        <a href="#" className="font-sf-pro underline inline-flex items-center group" style={{fontWeight: "300", fontSize: "clamp(18px, 1.8vw, 24px)", lineHeight: "130%", letterSpacing: "-1%", color: "#FFFFFFCC"}}>
                                             More about his works
                                             <ExternalLink className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                                         </a>

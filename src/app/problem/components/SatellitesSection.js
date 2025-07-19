@@ -7,7 +7,7 @@ export default function SatellitesSection() {
     return (
         <section className="relative lg:h-screen flex items-center justify-start overflow-hidden bg-black">
             {/* Десктопная версия */}
-            <div className="hidden lg:block relative z-10 w-full max-w-[1680px] mx-auto px-8 h-full">
+            <div className="hidden lg:block relative z-10 w-full max-w-[1680px] mx-auto problem-section-padding h-full">
                 {/* Первый текст - выравнен к левому краю */}
                 <div className="flex flex-col justify-center h-full">
                     <motion.div
@@ -24,7 +24,7 @@ export default function SatellitesSection() {
                             className="font-sf-pro gradient-text"
                             style={{
                                 fontWeight: "300",
-                                fontSize: "clamp(40px, 6vw, 80px)",
+                                fontSize: "clamp(40px, 5vw, 80px)",
                                 lineHeight: "96%",
                                 letterSpacing: "0%",
                             }}
@@ -45,13 +45,13 @@ export default function SatellitesSection() {
                         delay: 0.3,
                         ease: [0.22, 1, 0.36, 1] 
                     }}
-                    style={{ right: `max(2rem, calc((100vw - 1680px) / 2 + 2rem))` }}
+                    style={{ right: `max(1.25rem, calc((100vw - 1680px) / 2 + 60px))` }}
                 >
                     <p
                         className="font-sf-pro text-gray-300 max-w-[405px] text-left ml-auto"
                         style={{
                             fontWeight: "300",
-                            fontSize: "clamp(18px, 2vw, 24px)",
+                            fontSize: "clamp(18px, 1.8vw, 24px)",
                             lineHeight: "140%",
                             letterSpacing: "0%",
                         }}

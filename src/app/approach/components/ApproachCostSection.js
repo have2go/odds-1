@@ -27,7 +27,7 @@ export default function ApproachCostSection() {
             className="relative bg-black text-white overflow-hidden py-[180px]"
         >
             {/* Десктопная версия */}
-            <div className="hidden lg:block relative z-10 max-w-[1800px] mx-auto px-[125px] w-full grid grid-cols-2 gap-16">
+            <div className="hidden lg:block relative z-10 max-w-[1680px] mx-auto universal-section-padding w-full grid grid-cols-2 gap-16">
                 
                 {/* Левая колонка - Заголовок */}
                 <div className="h-fit">
@@ -35,11 +35,11 @@ export default function ApproachCostSection() {
                         ref={titleRef}
                         className="font-sf-pro gradient-text"
                         style={{
-                            fontSize: "clamp(40px, 6vw, 70px)",
+                            fontSize: "clamp(40px, 5vw, 80px)",
                             fontWeight: 300,
                             lineHeight: "110%",
                             letterSpacing: "-0.02em",
-                            paddingBottom: "0.05em"
+                            paddingBottom: "0.5em"
                         }}
                         initial={{ opacity: 0, y: 50 }}
                         animate={isTitleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -49,7 +49,6 @@ export default function ApproachCostSection() {
                         }}
                     >
                         How much does
-                        <br />
                         it cost?
                     </motion.h2>
                 </div>
@@ -85,7 +84,7 @@ export default function ApproachCostSection() {
                                 <span 
                                     className="text-white/80 font-sf-pro"
                                     style={{
-                                        fontSize: "clamp(16px, 2vw, 18px)",
+                                        fontSize: "clamp(18px, 1.8vw, 24px)",
                                         fontWeight: 300
                                     }}
                                 >
@@ -94,7 +93,7 @@ export default function ApproachCostSection() {
                                 <span 
                                     className="text-white font-sf-pro"
                                     style={{
-                                        fontSize: "clamp(16px, 2vw, 18px)",
+                                        fontSize: "clamp(18px, 1.8vw, 24px)",
                                         fontWeight: 400
                                     }}
                                 >
@@ -138,7 +137,7 @@ export default function ApproachCostSection() {
             </div>
 
             {/* Мобильная версия */}
-            <div className="lg:hidden relative z-10 max-w-4xl mx-auto px-5 w-full">
+            <div className="lg:hidden relative z-10 max-w-[1680px] mx-auto universal-section-padding w-full">
                 
                 {/* Заголовок */}
                 <div className="mb-12">

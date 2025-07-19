@@ -70,6 +70,27 @@ body {
   overflow: visible;
 }
 
+/* Корректировка размера шрифта для заголовка ProblemMain в диапазоне 1024-1400px */
+@media (min-width: 1024px) and (max-width: 1400px) {
+  .problem-main-title {
+    font-size: 80px !important;
+  }
+}
+
+/* Корректировка размера шрифта для заголовка ApproachHeroSection в диапазоне 1024-1400px */
+@media (min-width: 1024px) and (max-width: 1400px) {
+  .approach-hero-title {
+    font-size: 90px !important;
+  }
+}
+
+/* Корректировка размера шрифта для заголовка ApproachHeroSection для экранов <1024px */
+@media (max-width: 1023px) {
+  .approach-hero-title {
+    font-size: clamp(40px, 14vw, 90px) !important;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -165,5 +186,85 @@ a,
     --sh-input: 0 0% 14.9%;
     --sh-ring: 0 0% 83.1%;
     --sh-radius: 0.75rem;
+  }
+}
+
+/* Универсальные адаптивные паддинги для всех страниц */
+.universal-section-padding {
+  padding-left: 1.25rem; /* px-5 для мобильных <1024px */
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+  .universal-section-padding {
+    padding-left: 60px; /* 60px для 1024-1400px */
+    padding-right: 60px;
+  }
+}
+
+@media (min-width: 1401px) {
+  .universal-section-padding {
+    padding-left: 125px; /* 125px для >1400px */
+    padding-right: 125px;
+  }
+}
+
+/* Адаптивные паддинги для страницы problem */
+.problem-section-padding {
+  padding-left: 1.25rem; /* px-5 для мобильных <1024px */
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+  .problem-section-padding {
+    padding-left: 60px; /* 60px для 1024-1400px */
+    padding-right: 60px;
+  }
+}
+
+@media (min-width: 1401px) {
+  .problem-section-padding {
+    padding-left: 125px; /* 125px для >1400px */
+    padding-right: 125px;
+  }
+}
+
+/* Адаптивные паддинги для страницы ideas */
+.ideas-section-padding {
+  padding-left: 1.25rem; /* px-5 для мобильных <1024px */
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+  .ideas-section-padding {
+    padding-left: 60px; /* 60px для 1024-1400px */
+    padding-right: 60px;
+  }
+}
+
+@media (min-width: 1401px) {
+  .ideas-section-padding {
+    padding-left: 125px; /* 125px для >1400px */
+    padding-right: 125px;
+  }
+}
+
+/* Адаптивные паддинги для страницы we-are-open */
+.we-are-open-section-padding {
+  padding-left: 1.25rem; /* px-5 для мобильных <1024px */
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+  .we-are-open-section-padding {
+    padding-left: 60px; /* 60px для 1024-1400px */
+    padding-right: 60px;
+  }
+}
+
+@media (min-width: 1401px) {
+  .we-are-open-section-padding {
+    padding-left: 125px; /* 125px для >1400px */
+    padding-right: 125px;
   }
 }
