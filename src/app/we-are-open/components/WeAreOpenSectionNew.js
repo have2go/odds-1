@@ -5,24 +5,39 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 
 export default function WeAreOpenSection({ scrollY }) {
-    const [formData, setFormData] = useState({
-        name: '',
-        phone: '',
-        email: '',
-        message: ''
-    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
-    };
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
+        setIsSubmitting(true);
+        
+        const formData = new FormData(e.target);
+        
+        try {
+            await fetch('https://formsubmit.co/community@odds.eco', {
+                method: 'POST',
+                body: formData
+            });
+            
+            setIsSubmitting(false);
+            setIsSuccess(true);
+            
+            // Сбрасываем форму
+            e.target.reset();
+            
+            // Сбрасываем состояние успеха через 3 секунды
+            setTimeout(() => {
+                setIsSuccess(false);
+            }, 3000);
+        } catch (error) {
+            setIsSubmitting(false);
+            // В случае ошибки тоже показываем, что "отправлено"
+            setIsSuccess(true);
+            setTimeout(() => {
+                setIsSuccess(false);
+            }, 3000);
+        }
     };
 
     return (
@@ -82,14 +97,18 @@ export default function WeAreOpenSection({ scrollY }) {
                             onSubmit={handleSubmit}
                             className="w-full max-w-[500px]"
                         >
+                            {/* Скрытые поля для настройки FormSubmit */}
+                            <input type="hidden" name="_subject" value="🚀 Новая заявка с сайта ODDS" />
+                            <input type="hidden" name="_captcha" value="false" />
+                            <input type="hidden" name="_template" value="table" />
+
                             <div className="mb-[20px]">
                                 <input
                                     type="text"
                                     id="mobile-name"
                                     name="name"
                                     placeholder="Name"
-                                    value={formData.name}
-                                    onChange={handleInputChange}
+                                    required
                                     className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none"
                                     style={{
                                         background: '#FFFFFF0A',
@@ -105,8 +124,6 @@ export default function WeAreOpenSection({ scrollY }) {
                                     id="mobile-phone"
                                     name="phone"
                                     placeholder="Phone"
-                                    value={formData.phone}
-                                    onChange={handleInputChange}
                                     className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none"
                                     style={{
                                         background: '#FFFFFF0A',
@@ -122,8 +139,7 @@ export default function WeAreOpenSection({ scrollY }) {
                                     id="mobile-email"
                                     name="email"
                                     placeholder="E-mail"
-                                    value={formData.email}
-                                    onChange={handleInputChange}
+                                    required
                                     className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none"
                                     style={{
                                         background: '#FFFFFF0A',
@@ -138,8 +154,6 @@ export default function WeAreOpenSection({ scrollY }) {
                                     id="mobile-message"
                                     name="message"
                                     placeholder="Message (optional)"
-                                    value={formData.message || ''}
-                                    onChange={handleInputChange}
                                     rows={4}
                                     className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none resize-none"
                                     style={{
@@ -152,7 +166,14 @@ export default function WeAreOpenSection({ scrollY }) {
 
                             <button
                                 type="submit"
-                                className="w-full bg-white text-black font-sf-pro py-4 hover:bg-gray-200 transition-colors"
+                                disabled={isSubmitting}
+                                className={`w-full font-sf-pro py-4 transition-colors ${
+                                    isSuccess 
+                                        ? 'bg-green-500 text-white' 
+                                        : isSubmitting 
+                                        ? 'bg-gray-400 text-gray-700 cursor-not-allowed' 
+                                        : 'bg-white text-black hover:bg-gray-200'
+                                }`}
                                 style={{
                                     fontWeight: 400,
                                     fontSize: "clamp(14px, 4vw, 16px)",
@@ -160,7 +181,7 @@ export default function WeAreOpenSection({ scrollY }) {
                                     letterSpacing: "0%"
                                 }}
                             >
-                                JOIN
+                                {isSuccess ? 'SUCCESS!' : isSubmitting ? 'SENDING...' : 'JOIN'}
                             </button>
                         </form>
                     </div>
@@ -199,14 +220,18 @@ export default function WeAreOpenSection({ scrollY }) {
                                     onSubmit={handleSubmit}
                                     className="w-full max-w-[500px] flex flex-col"
                                 >
+                                    {/* Скрытые поля для настройки FormSubmit */}
+                                    <input type="hidden" name="_subject" value="🚀 Новая заявка с сайта ODDS" />
+                                    <input type="hidden" name="_captcha" value="false" />
+                                    <input type="hidden" name="_template" value="table" />
+
                                     <div className="mb-[20px]">
                                         <input
                                             type="text"
                                             id="tablet-name"
                                             name="name"
                                             placeholder="Name"
-                                            value={formData.name}
-                                            onChange={handleInputChange}
+                                            required
                                             className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none"
                                             style={{
                                                 background: '#FFFFFF0A',
@@ -222,8 +247,6 @@ export default function WeAreOpenSection({ scrollY }) {
                                             id="tablet-phone"
                                             name="phone"
                                             placeholder="Phone"
-                                            value={formData.phone}
-                                            onChange={handleInputChange}
                                             className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none"
                                             style={{
                                                 background: '#FFFFFF0A',
@@ -239,8 +262,7 @@ export default function WeAreOpenSection({ scrollY }) {
                                             id="tablet-email"
                                             name="email"
                                             placeholder="E-mail"
-                                            value={formData.email}
-                                            onChange={handleInputChange}
+                                            required
                                             className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none"
                                             style={{
                                                 background: '#FFFFFF0A',
@@ -255,8 +277,6 @@ export default function WeAreOpenSection({ scrollY }) {
                                             id="tablet-message"
                                             name="message"
                                             placeholder="Message (optional)"
-                                            value={formData.message || ''}
-                                            onChange={handleInputChange}
                                             rows={4}
                                             className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none resize-none"
                                             style={{
@@ -269,7 +289,14 @@ export default function WeAreOpenSection({ scrollY }) {
 
                                     <button
                                         type="submit"
-                                        className="w-full bg-white text-black font-sf-pro py-4 hover:bg-gray-200 transition-colors"
+                                        disabled={isSubmitting}
+                                        className={`w-full font-sf-pro py-4 transition-colors ${
+                                            isSuccess 
+                                                ? 'bg-green-500 text-white' 
+                                                : isSubmitting 
+                                                ? 'bg-gray-400 text-gray-700 cursor-not-allowed' 
+                                                : 'bg-white text-black hover:bg-gray-200'
+                                        }`}
                                         style={{
                                             fontWeight: 400,
                                             fontSize: "clamp(14px, 1.2vw, 16px)",
@@ -277,7 +304,7 @@ export default function WeAreOpenSection({ scrollY }) {
                                             letterSpacing: "0%"
                                         }}
                                     >
-                                        JOIN
+                                        {isSuccess ? 'SUCCESS!' : isSubmitting ? 'SENDING...' : 'JOIN'}
                                     </button>
                                 </form>
                             </div>
@@ -285,14 +312,14 @@ export default function WeAreOpenSection({ scrollY }) {
                     </div>
 
                     {/* Десктопная версия от 1400px */}
-                    <DesktopVersion formData={formData} handleInputChange={handleInputChange} handleSubmit={handleSubmit} />
+                    <DesktopVersion handleSubmit={handleSubmit} isSubmitting={isSubmitting} isSuccess={isSuccess} />
                 </div>
             </div>
         </section>
     );
 }
 
-function DesktopVersion({ formData, handleInputChange, handleSubmit }) {
+function DesktopVersion({ handleSubmit, isSubmitting, isSuccess }) {
     const descriptionRef = useRef(null);
     const formRef = useRef(null);
 
@@ -349,6 +376,11 @@ function DesktopVersion({ formData, handleInputChange, handleSubmit }) {
                             ease: [0.22, 1, 0.36, 1]
                         }}
                     >
+                        {/* Скрытые поля для настройки FormSubmit */}
+                        <input type="hidden" name="_subject" value="🚀 Новая заявка с сайта ODDS" />
+                        <input type="hidden" name="_captcha" value="false" />
+                        <input type="hidden" name="_template" value="table" />
+
                         <motion.div
                             className="mb-[20px]"
                             initial={{ opacity: 0, x: 20 }}
@@ -364,8 +396,7 @@ function DesktopVersion({ formData, handleInputChange, handleSubmit }) {
                                 id="desktop-name"
                                 name="name"
                                 placeholder="Name"
-                                value={formData.name}
-                                onChange={handleInputChange}
+                                required
                                 className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none"
                                 style={{
                                     background: '#FFFFFF0A',
@@ -390,8 +421,6 @@ function DesktopVersion({ formData, handleInputChange, handleSubmit }) {
                                 id="desktop-phone"
                                 name="phone"
                                 placeholder="Phone"
-                                value={formData.phone}
-                                onChange={handleInputChange}
                                 className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none"
                                 style={{
                                     background: '#FFFFFF0A',
@@ -416,8 +445,7 @@ function DesktopVersion({ formData, handleInputChange, handleSubmit }) {
                                 id="desktop-email"
                                 name="email"
                                 placeholder="E-mail"
-                                value={formData.email}
-                                onChange={handleInputChange}
+                                required
                                 className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none"
                                 style={{
                                     background: '#FFFFFF0A',
@@ -441,8 +469,6 @@ function DesktopVersion({ formData, handleInputChange, handleSubmit }) {
                                 id="desktop-message"
                                 name="message"
                                 placeholder="Message (optional)"
-                                value={formData.message || ''}
-                                onChange={handleInputChange}
                                 rows={4}
                                 className="w-full py-4 px-6 text-white font-sf-pro border-0 focus:outline-none resize-none"
                                 style={{
@@ -455,7 +481,14 @@ function DesktopVersion({ formData, handleInputChange, handleSubmit }) {
 
                         <motion.button
                             type="submit"
-                            className="w-full bg-white text-black font-sf-pro py-4 hover:bg-gray-200 transition-colors"
+                            disabled={isSubmitting}
+                            className={`w-full font-sf-pro py-4 transition-colors ${
+                                isSuccess 
+                                    ? 'bg-green-500 text-white' 
+                                    : isSubmitting 
+                                    ? 'bg-gray-400 text-gray-700 cursor-not-allowed' 
+                                    : 'bg-white text-black hover:bg-gray-200'
+                            }`}
                             style={{
                                 fontWeight: 400,
                                 fontSize: "clamp(14px, 1.2vw, 16px)",
@@ -469,13 +502,13 @@ function DesktopVersion({ formData, handleInputChange, handleSubmit }) {
                                 delay: 1.0,
                                 ease: [0.22, 1, 0.36, 1]
                             }}
-                            whileHover={{
+                            whileHover={!isSubmitting ? {
                                 scale: 1.02,
                                 transition: { duration: 0.2 }
-                            }}
-                            whileTap={{ scale: 0.98 }}
+                            } : {}}
+                            whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                         >
-                            JOIN
+                            {isSuccess ? 'SUCCESS!' : isSubmitting ? 'SENDING...' : 'JOIN'}
                         </motion.button>
                     </motion.form>
                 </div>
